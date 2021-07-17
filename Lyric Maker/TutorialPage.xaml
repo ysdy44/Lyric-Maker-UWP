@@ -1,0 +1,304 @@
+﻿<Page
+    x:Class="Lyric_Maker.TutorialPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lyric_Maker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <FlipView x:Name="FlipView">
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox MaxWidth="234">
+                    <StackPanel Width="234" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="DeepPink">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <ContentControl Height="12"/>
+                                <SymbolIcon Symbol="Mute"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    mp3
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+
+                        <ContentControl Width="12"/>
+
+                        <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="Orange">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <ContentControl Height="12"/>
+                                <SymbolIcon Symbol="MusicInfo"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    lrc
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+
+                        <ContentControl Width="12"/>
+
+                        <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="Orange">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="24" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="50" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="46" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="50" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </Viewbox>                    
+
+                <TextBlock x:Name="Tutorial00TextBlock" Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Border Grid.Row="4" Padding="12,8" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                    <TextBlock x:Name="Tutorial01TextBlock" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource AppForeground}"/>
+                </Border>
+
+                <Button x:Name="Forward00Button" Grid.Row="6" FontWeight="Bold" HorizontalAlignment="Center">
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+
+            </Grid>
+        </FlipViewItem>
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Padding="12,2" RequestedTheme="Dark" Background="Orange">
+                    <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" >
+                        <LineBreak/>
+                        <Run>[</Run><Run x:Name="TitleRun"/><Run>]</Run>
+                        <LineBreak/>
+                        <Run>[</Run><Run x:Name="ArtistRun"/><Run>]</Run>
+                        <LineBreak/>
+                        <Run>[</Run><Run x:Name="AlbumRun"/><Run>]</Run>
+                        <LineBreak/>
+                        <Run>[</Run><Run x:Name="LyricsEditorRun"/><Run>]</Run>
+                        <LineBreak/>
+                        <Run>[</Run><Run x:Name="TimeOffsetRun"/><Run>]</Run>
+                        <LineBreak/>
+                        <Run>[</Run><Run>00:00.00</Run><Run>]</Run>
+                        <Run x:Name="InputText00Run"/>
+                        <LineBreak/>
+                        <Run>[</Run><Run>00:01.00</Run><Run>]</Run>
+                        <Run x:Name="InputText01Run"/>
+                        <LineBreak/>
+                        <Run>[</Run><Run>00:02.00</Run><Run>]</Run>
+                        <Run x:Name="InputText02Run"/>
+                </TextBlock>
+                </Border>
+
+                <TextBlock x:Name="Tutorial02TextBlock" Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button x:Name="Forward02Button" Grid.Row="4" FontWeight="Bold" HorizontalAlignment="Center">
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+
+            </Grid>
+        </FlipViewItem>
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox MaxWidth="324">
+                    <Border Width="324" HorizontalAlignment="Center" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                        <TextBlock x:Name="PreviewTextBlock" FontSize="20" IsTextSelectionEnabled="True"> 
+                            <LineBreak/> 
+                            <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">ti</Run><Run>:</Run><Run>]</Run>
+                            <LineBreak/>
+                            <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">ar</Run><Run>:</Run><Run>]</Run>
+                            <LineBreak/>
+                            <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">al</Run><Run>:</Run><Run>]</Run>       
+                            <LineBreak/>
+                            <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">by</Run><Run>:</Run><Run>]</Run>
+                            <LineBreak/>
+                            <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">offset</Run><Run>:</Run><Run>]</Run>
+                            <LineBreak/>
+                            <Run>[</Run><Run>00:00.00</Run><Run>]</Run>
+                            <Run x:Name="InputText10Run" Foreground="{ThemeResource AppTextBrush}">sadasdasdsa</Run>  
+                            <LineBreak/>
+                            <Run >[</Run><Run>00:00.00</Run><Run>]</Run>
+                            <Run x:Name="InputText11Run" Foreground="{ThemeResource AppTextBrush}">sadasdasdsa</Run>
+                            <LineBreak/>
+                            <Run>[</Run><Run>00:00.00</Run><Run>]</Run>
+                            <Run x:Name="InputText12Run" Foreground="{ThemeResource AppTextBrush}">sadasdasdsa</Run>
+                            <LineBreak/>
+                        </TextBlock>
+                    </Border>
+                </Viewbox>
+
+                <TextBlock x:Name="Tutorial03TextBlock" Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button x:Name="Forward03Button" Grid.Row="4" FontWeight="Bold" HorizontalAlignment="Center">
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+                
+            </Grid>
+        </FlipViewItem>
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox MaxWidth="380">
+                    <StackPanel Width="380" Padding="12" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+
+                        <Border Width="54" Height="50" HorizontalAlignment="Right" Background="{ThemeResource SystemColorControlAccentBrush}">
+                            <StackPanel VerticalAlignment="Center">
+                                <SymbolIcon Symbol="Add"/>
+                                <TextBlock x:Name="AddTextBlock" FontSize="10" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ContentControl Height="22"/>
+
+                        <Grid Width="300" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border CornerRadius="2" VerticalAlignment="Center" BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <TextBlock Margin="4,0,4,2" VerticalAlignment="Center" Foreground="{ThemeResource SystemBaseMediumColor}">
+                                    <Run>[</Run>
+                                    <Run>00:00.00</Run>
+                                    <Run>]</Run>
+                                </TextBlock>
+                            </Border>
+
+                            <Border Grid.Column="1" Width="4" Height="4" VerticalAlignment="Center" BorderThickness="0,1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+
+                            <Border Grid.Column="2" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" MinWidth="128"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock x:Name="InputTextTextBlock" Margin="10,0" FontSize="14" FontWeight="Medium" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="1" Width="50" Height="40" >
+                                        <SymbolIcon Symbol="GlobalNavigationButton" Foreground="{ThemeResource SystemColorControlAccentBrush}"/>
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <ContentControl Height="22"/>
+
+                        <Border Width="Auto" HorizontalAlignment="Right"
+                                MinWidth="{ThemeResource MenuFlyoutThemeMinHeight}"
+                                MaxWidth="{ThemeResource FlyoutThemeMaxWidth}"
+                                BorderThickness="{ThemeResource FlyoutBorderThemeThickness}" 
+                                BorderBrush="{ThemeResource FlyoutBorderThemeBrush}" 
+                                Background="{ThemeResource FlyoutBackgroundThemeBrush}"
+                                >
+                            <StackPanel>
+
+                                <StackPanel Padding="12,0" Height="36" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Play" />
+                                    <ContentControl Width="12"/>
+                                    <TextBlock x:Name="PauseTextBlock" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <StackPanel Padding="12,0" Height="36" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Pause" />
+                                    <ContentControl Width="12"/>
+                                    <TextBlock x:Name="PlayTextBlock" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <MenuFlyoutSeparator/>
+
+                                <StackPanel Padding="12,0" Height="36" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Paste" />
+                                    <ContentControl Width="12"/>
+                                    <TextBlock x:Name="PasteTextBlock" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <StackPanel Padding="12,0" Height="36" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Copy" />
+                                    <ContentControl Width="12"/>
+                                    <TextBlock x:Name="CopyTextBlock" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <MenuFlyoutSeparator/>
+
+                                <StackPanel Padding="12,0" Height="36" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Copy" />
+                                    <ContentControl Width="12"/>
+                                    <TextBlock x:Name="DuplicateTextBlock" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <StackPanel Padding="12,0" Height="36" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Delete" Foreground="Red" />
+                                    <ContentControl Width="12"/>
+                                    <TextBlock x:Name="RemoveTextBlock" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </Viewbox>
+
+                <TextBlock x:Name="Tutorial04TextBlock" Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button x:Name="Button" Grid.Row="4" Padding="12,2" Width="Auto" MinWidth="200" FontWeight="Bold" HorizontalAlignment="Center" Background="{ThemeResource SystemColorControlAccentBrush}"/>
+
+            </Grid>
+        </FlipViewItem>
+
+
+    </FlipView>
+</Page>
