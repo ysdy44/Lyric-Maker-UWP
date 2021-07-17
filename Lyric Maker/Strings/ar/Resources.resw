@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>صانع الأغاني</value></data>
+<data name='$Untitled' xml:space='preserve'><value>بدون عنوان</value></data>
+<data name='$InputText' xml:space='preserve'><value>الرجاء إدخال النص</value></data>
+<data name='New' xml:space='preserve'><value>جديد</value></data>
+<data name='Open' xml:space='preserve'><value>افتح ملف .lrc</value></data>
+<data name='Save' xml:space='preserve'><value>احفظ ملف .lrc</value></data>
+<data name='Tutorial' xml:space='preserve'><value>دروس</value></data>
+<data name='Setting' xml:space='preserve'><value>اقامة</value></data>
+<data name='Speed' xml:space='preserve'><value>سرعة</value></data>
+<data name='Zoom' xml:space='preserve'><value>تكبير</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>تكبير</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>تصغير</value></data>
+<data name='Splite' xml:space='preserve'><value>منفصل</value></data>
+<data name='Info' xml:space='preserve'><value>معلومة</value></data>
+<data name='Lyrics' xml:space='preserve'><value>كلمات</value></data>
+<data name='Title' xml:space='preserve'><value>لقب</value></data>
+<data name='Artist' xml:space='preserve'><value>فنان</value></data>
+<data name='Album' xml:space='preserve'><value>البوم</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>محرر كلمات</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>تغير وقت زمني</value></data>
+<data name='Find' xml:space='preserve'><value>تجد</value></data>
+<data name='Add' xml:space='preserve'><value>اضف إليه</value></data>
+<data name='Move' xml:space='preserve'><value>التليفون المحمول</value></data>
+<data name='Play' xml:space='preserve'><value>تشغيل (من الوقت الحالي)</value></data>
+<data name='Pause' xml:space='preserve'><value>وقفة (من الوقت الحالي)</value></data>
+<data name='Paste' xml:space='preserve'><value>لصق النص</value></data>
+<data name='Copy' xml:space='preserve'><value>نسخ النص</value></data>
+<data name='Duplicate' xml:space='preserve'><value>ينسخ</value></data>
+<data name='Remove' xml:space='preserve'><value>إزالة</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>لعب</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>نفذ الوقت</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>افتح ملف الموسيقى</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>تحتوي الموسيقى الكاملة على ملف موسيقى وملف كلمات.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>يمكن عرض الملفات الغنائية ذات امتداد lrc بشكل متزامن في العديد من المشغلات الرقمية. كلمات LRC هي تنسيق خاص للكلمات يعتمد على نص عادي يحتوي على "علامات" في شكل "*: *". تم اقتراحه لأول مرة من قبل السيد Guo Xiangxiang (Djohan) واستخدم في برنامجه. يمكن استخدام هذا النوع من ملفات كلمات الأغاني لتحقيق وظيفة الكاريوكي (يلزم وجود برنامج خاص) ، ويمكن عرضها وتحريرها باستخدام برامج معالجة الكلمات العادية.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>تتضمن الموسيقى الكاملة العنوان والفنان والألبوم ومحرر الأغاني وإزاحة الوقت وكلمات الأغاني.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>في منطقة المعاينة ، يمكنك نسخ أو معاينة الأغاني.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>في منطقة التحرير ، يمكنك النقر فوق الزر "إضافة" لإضافة كلمات ، والنقر فوق زر القائمة لمعالجة الأغاني الحالية.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>ابدأ في صنع الأغاني</value></data>
+
+ </root>

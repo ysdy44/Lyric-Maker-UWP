@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>가사 메이커</value></data>
+<data name='$Untitled' xml:space='preserve'><value>무제</value></data>
+<data name='$InputText' xml:space='preserve'><value>Facebook</value></data>
+<data name='New' xml:space='preserve'><value>새로운</value></data>
+<data name='Open' xml:space='preserve'><value>.lrc 파일 열기</value></data>
+<data name='Save' xml:space='preserve'><value>.lrc 파일 저장</value></data>
+<data name='Tutorial' xml:space='preserve'><value>튜토리얼</value></data>
+<data name='Setting' xml:space='preserve'><value>환경</value></data>
+<data name='Speed' xml:space='preserve'><value>속도</value></data>
+<data name='Zoom' xml:space='preserve'><value>줌</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>확대</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>축소</value></data>
+<data name='Splite' xml:space='preserve'><value>스플리트</value></data>
+<data name='Info' xml:space='preserve'><value>정보</value></data>
+<data name='Lyrics' xml:space='preserve'><value>가사</value></data>
+<data name='Title' xml:space='preserve'><value>표제</value></data>
+<data name='Artist' xml:space='preserve'><value>예술가</value></data>
+<data name='Album' xml:space='preserve'><value>앨범</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>가사 편집기</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>시간 오프셋</value></data>
+<data name='Find' xml:space='preserve'><value>찾기</value></data>
+<data name='Add' xml:space='preserve'><value>더하다</value></data>
+<data name='Move' xml:space='preserve'><value>움직임</value></data>
+<data name='Play' xml:space='preserve'><value>현재 시간부터 재생</value></data>
+<data name='Pause' xml:space='preserve'><value>현재 시간부터 일시 중지</value></data>
+<data name='Paste' xml:space='preserve'><value>텍스트 붙여넣기</value></data>
+<data name='Copy' xml:space='preserve'><value>텍스트 복사</value></data>
+<data name='Duplicate' xml:space='preserve'><value>복제</value></data>
+<data name='Remove' xml:space='preserve'><value>없애다</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>플레이</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>중지</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>음악 파일 열기</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>완전한 음악에는 음악 파일과 가사 파일이 포함됩니다.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>확장자가 lrc인 가사 파일은 다양한 디지털 플레이어에서 동시에 표시할 수 있습니다. LRC 가사는 "*:*" 형식의 "태그"가 포함된 일반 텍스트 기반 가사의 특수 형식입니다. 그것은 Mr. Guo Xiangxiang(Djohan)에 의해 처음 제안되었고 그의 프로그램에서 사용되었습니다. 이런 종류의 가사 파일은 노래방 기능을 구현하는 데 사용할 수 있으며(특수 프로그램 필요) 일반 워드 프로세싱 소프트웨어로 보고 편집할 수 있습니다.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>완전한 음악에는 제목, 아티스트, 앨범, 가사 편집기, 시간 오프셋 및 가사가 포함됩니다.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>미리보기 영역에서 가사를 복사하거나 미리 볼 수 있습니다.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>편집 영역에서 추가 버튼을 클릭하여 가사를 추가하고 메뉴 버튼을 클릭하여 현재 가사를 조작할 수 있습니다.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>가사 만들기 시작</value></data>
+
+ </root>

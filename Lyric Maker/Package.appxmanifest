@@ -35,8 +35,8 @@
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Lyric Maker"
-        BackgroundColor="#191919" DisplayName="Lyric Maker">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" />
+        BackgroundColor="#191919" DisplayName="ms-resource:///resources/$DisplayName">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"  ShortName="ms-resource:///resources/$DisplayName"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png"  BackgroundColor="#191919"/>
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="landscape"/>

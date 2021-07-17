@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>Creatore di testi</value></data>
+<data name='$Untitled' xml:space='preserve'><value>Senza titolo</value></data>
+<data name='$InputText' xml:space='preserve'><value>Inserisci il testo</value></data>
+<data name='New' xml:space='preserve'><value>Nuovo</value></data>
+<data name='Open' xml:space='preserve'><value>Apri file .lrc</value></data>
+<data name='Save' xml:space='preserve'><value>Salva file .lrc</value></data>
+<data name='Tutorial' xml:space='preserve'><value>Tutorial</value></data>
+<data name='Setting' xml:space='preserve'><value>Ambientazione</value></data>
+<data name='Speed' xml:space='preserve'><value>Velocità</value></data>
+<data name='Zoom' xml:space='preserve'><value>Ingrandisci</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>Ingrandire</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>Rimpicciolisci</value></data>
+<data name='Splite' xml:space='preserve'><value>Spalato</value></data>
+<data name='Info' xml:space='preserve'><value>Informazioni</value></data>
+<data name='Lyrics' xml:space='preserve'><value>Testi</value></data>
+<data name='Title' xml:space='preserve'><value>Titolo</value></data>
+<data name='Artist' xml:space='preserve'><value>Artista</value></data>
+<data name='Album' xml:space='preserve'><value>Album</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>Editor di testi</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>Differenza di fuso orario</value></data>
+<data name='Find' xml:space='preserve'><value>Trova</value></data>
+<data name='Add' xml:space='preserve'><value>Inserisci</value></data>
+<data name='Move' xml:space='preserve'><value>Mossa</value></data>
+<data name='Play' xml:space='preserve'><value>Riproduci dall'ora corrente</value></data>
+<data name='Pause' xml:space='preserve'><value>Pausa dall'ora corrente</value></data>
+<data name='Paste' xml:space='preserve'><value>Incolla testo</value></data>
+<data name='Copy' xml:space='preserve'><value>Copia testo</value></data>
+<data name='Duplicate' xml:space='preserve'><value>Duplicare</value></data>
+<data name='Remove' xml:space='preserve'><value>Rimuovere</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>Giocare</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>Pausa</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>Apri file musicale</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>Una musica completa contiene un file musicale e un file dei testi.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>I file di testo con estensione lrc possono essere visualizzati in modo sincrono in vari lettori digitali. I testi LRC sono un formato speciale per i testi basati su testo normale che contiene "tag" sotto forma di "*:*". È stato proposto per la prima volta dal signor Guo Xiangxiang (Djohan) e utilizzato nel suo programma. Questo tipo di file di testo può essere utilizzato per realizzare la funzione karaoke (è richiesto un programma speciale) e può essere visualizzato e modificato con un normale software di elaborazione testi.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>La musica completa include Titolo, Artista, Album, Editor di testi, Time Offset e Testi.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>Nell'area Anteprima, puoi copiare o visualizzare in anteprima i testi.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>Nell'area di modifica, puoi fare clic sul pulsante Aggiungi per aggiungere testi e fare clic sul pulsante Menu per manipolare i testi correnti.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>Inizia a creare testi</value></data>
+
+ </root>

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>Créateur de paroles</value></data>
+<data name='$Untitled' xml:space='preserve'><value>sans titre</value></data>
+<data name='$InputText' xml:space='preserve'><value>Veuillez saisir le texte</value></data>
+<data name='New' xml:space='preserve'><value>Nouveau</value></data>
+<data name='Open' xml:space='preserve'><value>Ouvrir le fichier .lrc</value></data>
+<data name='Save' xml:space='preserve'><value>Enregistrer le fichier .lrc</value></data>
+<data name='Tutorial' xml:space='preserve'><value>Tutoriels</value></data>
+<data name='Setting' xml:space='preserve'><value>Réglage</value></data>
+<data name='Speed' xml:space='preserve'><value>Vitesse</value></data>
+<data name='Zoom' xml:space='preserve'><value>Zoom</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>Agrandir</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>Dézoomer</value></data>
+<data name='Splite' xml:space='preserve'><value>Splite</value></data>
+<data name='Info' xml:space='preserve'><value>Info</value></data>
+<data name='Lyrics' xml:space='preserve'><value>paroles de chanson</value></data>
+<data name='Title' xml:space='preserve'><value>Titre</value></data>
+<data name='Artist' xml:space='preserve'><value>Artiste</value></data>
+<data name='Album' xml:space='preserve'><value>Album</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>Éditeur de paroles</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>Décalage horaire</value></data>
+<data name='Find' xml:space='preserve'><value>Trouve</value></data>
+<data name='Add' xml:space='preserve'><value>Ajouter</value></data>
+<data name='Move' xml:space='preserve'><value>Bouge toi</value></data>
+<data name='Play' xml:space='preserve'><value>Lecture à partir de l'heure actuelle</value></data>
+<data name='Pause' xml:space='preserve'><value>Pause à partir de l'heure actuelle</value></data>
+<data name='Paste' xml:space='preserve'><value>Coller du texte</value></data>
+<data name='Copy' xml:space='preserve'><value>Copier le texte</value></data>
+<data name='Duplicate' xml:space='preserve'><value>Dupliquer</value></data>
+<data name='Remove' xml:space='preserve'><value>Supprimer</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>Jouer</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>Pause</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>Ouvrir le fichier de musique</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>Une musique complète contient un fichier de musique et un fichier de paroles.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>Les fichiers de paroles avec l'extension lrc peuvent être affichés de manière synchrone dans divers lecteurs numériques. Les paroles LRC sont un format spécial pour les paroles basées sur du texte brut qui contient des "tags" sous la forme de "*:*". Il a d'abord été proposé par M. Guo Xiangxiang (Djohan) et utilisé dans son programme. Ce type de fichier de paroles peut être utilisé pour réaliser la fonction karaoké (un programme spécial est requis) et peut être visualisé et édité avec un logiciel de traitement de texte ordinaire.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>La musique complète comprend le titre, l'artiste, l'album, l'éditeur de paroles, le décalage horaire et les paroles.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>Dans la zone Aperçu, vous pouvez copier ou prévisualiser les paroles.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>Dans la zone d'édition, vous pouvez cliquer sur le bouton Ajouter pour ajouter des paroles, puis sur le bouton Menu pour manipuler les paroles actuelles.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>Commencez à créer des paroles</value></data>
+
+ </root>

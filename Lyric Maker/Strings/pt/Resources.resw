@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
+<data name='$Untitled' xml:space='preserve'><value>Sem título</value></data>
+<data name='$InputText' xml:space='preserve'><value>Introduza o texto</value></data>
+<data name='New' xml:space='preserve'><value>Novo</value></data>
+<data name='Open' xml:space='preserve'><value>Abrir arquivo .lrc</value></data>
+<data name='Save' xml:space='preserve'><value>Salvar arquivo .lrc</value></data>
+<data name='Tutorial' xml:space='preserve'><value>Tutoriais</value></data>
+<data name='Setting' xml:space='preserve'><value>Contexto</value></data>
+<data name='Speed' xml:space='preserve'><value>Velocidade</value></data>
+<data name='Zoom' xml:space='preserve'><value>Ampliação</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>Mais Zoom</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>Reduzir o zoom</value></data>
+<data name='Splite' xml:space='preserve'><value>Splite</value></data>
+<data name='Info' xml:space='preserve'><value>Informações</value></data>
+<data name='Lyrics' xml:space='preserve'><value>Letra da música</value></data>
+<data name='Title' xml:space='preserve'><value>Título</value></data>
+<data name='Artist' xml:space='preserve'><value>Artista</value></data>
+<data name='Album' xml:space='preserve'><value>Álbum</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>Editor de letras</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>Compensação de tempo</value></data>
+<data name='Find' xml:space='preserve'><value>Achar</value></data>
+<data name='Add' xml:space='preserve'><value>Adicionar</value></data>
+<data name='Move' xml:space='preserve'><value>Mover</value></data>
+<data name='Play' xml:space='preserve'><value>Jogue a partir da hora atual</value></data>
+<data name='Pause' xml:space='preserve'><value>Pausa a partir da hora atual</value></data>
+<data name='Paste' xml:space='preserve'><value>Colar Texto</value></data>
+<data name='Copy' xml:space='preserve'><value>Copiar Texto</value></data>
+<data name='Duplicate' xml:space='preserve'><value>Duplicado</value></data>
+<data name='Remove' xml:space='preserve'><value>Remover</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>Jogar</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>Pausa</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>Abrir arquivo de música</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>Uma música completa contém um arquivo de música e um arquivo de letra.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>Os arquivos de letras com a extensão lrc podem ser exibidos de forma síncrona em vários reprodutores digitais. As letras LRC são um formato especial para letras baseado em texto simples que contém "tags" na forma de "*: *". Foi proposto pela primeira vez pelo Sr. Guo Xiangxiang (Djohan) e usado em seu programa. Este tipo de arquivo de letra pode ser usado para realizar a função karaokê (um programa especial é necessário) e pode ser visualizado e editado com um software de processamento de texto comum.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>A música completa inclui Título, Artista, Álbum, Editor de Letras, Compensação de Tempo e Letras.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>Na área de visualização, você pode copiar ou visualizar as letras.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>Na área de edição, você pode clicar no botão Adicionar para adicionar a letra e clicar no botão Menu para manipular a letra atual.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>Comece a fazer letras</value></data>
+
+ </root>

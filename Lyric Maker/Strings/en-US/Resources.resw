@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
+<data name='$Untitled' xml:space='preserve'><value>Untitled</value></data>
+<data name='$InputText' xml:space='preserve'><value>Please input the text</value></data>
+<data name='New' xml:space='preserve'><value>New</value></data>
+<data name='Open' xml:space='preserve'><value>Open .lrc File</value></data>
+<data name='Save' xml:space='preserve'><value>Save .lrc File</value></data>
+<data name='Tutorial' xml:space='preserve'><value>Tutorials</value></data>
+<data name='Setting' xml:space='preserve'><value>Setting</value></data>
+<data name='Speed' xml:space='preserve'><value>Speed</value></data>
+<data name='Zoom' xml:space='preserve'><value>Zoom</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>Zoom In</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>Zoom Out</value></data>
+<data name='Splite' xml:space='preserve'><value>Splite</value></data>
+<data name='Info' xml:space='preserve'><value>Info</value></data>
+<data name='Lyrics' xml:space='preserve'><value>Lyrics</value></data>
+<data name='Title' xml:space='preserve'><value>Title</value></data>
+<data name='Artist' xml:space='preserve'><value>Artist</value></data>
+<data name='Album' xml:space='preserve'><value>Album</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>Lyrics Editor</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>Time Offset</value></data>
+<data name='Find' xml:space='preserve'><value>Find</value></data>
+<data name='Add' xml:space='preserve'><value>Add</value></data>
+<data name='Move' xml:space='preserve'><value>Move</value></data>
+<data name='Play' xml:space='preserve'><value>Play from current Time</value></data>
+<data name='Pause' xml:space='preserve'><value>Pause from current Time</value></data>
+<data name='Paste' xml:space='preserve'><value>Paste Text</value></data>
+<data name='Copy' xml:space='preserve'><value>Copy Text</value></data>
+<data name='Duplicate' xml:space='preserve'><value>Duplicate</value></data>
+<data name='Remove' xml:space='preserve'><value>Remove</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>Play</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>Pause</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>Open Music File</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>A complete music contains a Music File and a Lyrics File.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>Lyric files with the extension of lrc can be displayed synchronously in various digital players. LRC lyrics is a special format for lyrics based on plain text that contains "tags" in the form of "*:*". It was first proposed by Mr. Guo Xiangxiang (Djohan) and used in his program. This kind of lyrics file can be used to realize the karaoke function (special program is required), and can be viewed and edited with ordinary word processing software.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>The complete music includes Title, Artist, Album, Lyrics Editor, Time Offset and Lyrics.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>In the Preview area, you can Copy or Preview the Lyrics.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>In the Editing area, you can click the Add button to Add Lyrics, and click the Menu Button to Manipulate the Current Lyrics.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>Start Making Lyrics</value></data>
+
+ </root>

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
+<data name='$Untitled' xml:space='preserve'><value>Без названия</value></data>
+<data name='$InputText' xml:space='preserve'><value>Пожалуйста, введите текст</value></data>
+<data name='New' xml:space='preserve'><value>Новый</value></data>
+<data name='Open' xml:space='preserve'><value>Открыть файл .lrc</value></data>
+<data name='Save' xml:space='preserve'><value>Сохранить файл .lrc</value></data>
+<data name='Tutorial' xml:space='preserve'><value>Учебники</value></data>
+<data name='Setting' xml:space='preserve'><value>Параметр</value></data>
+<data name='Speed' xml:space='preserve'><value>Скорость</value></data>
+<data name='Zoom' xml:space='preserve'><value>Увеличить</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>Увеличить</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>Уменьшить</value></data>
+<data name='Splite' xml:space='preserve'><value>Разделить</value></data>
+<data name='Info' xml:space='preserve'><value>Информация</value></data>
+<data name='Lyrics' xml:space='preserve'><value>Текст песни</value></data>
+<data name='Title' xml:space='preserve'><value>Заголовок</value></data>
+<data name='Artist' xml:space='preserve'><value>Художник</value></data>
+<data name='Album' xml:space='preserve'><value>Альбом</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>Редактор текстов</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>Смещение времени</value></data>
+<data name='Find' xml:space='preserve'><value>Находить</value></data>
+<data name='Add' xml:space='preserve'><value>Добавлять</value></data>
+<data name='Move' xml:space='preserve'><value>Двигаться</value></data>
+<data name='Play' xml:space='preserve'><value>Играть с текущего времени</value></data>
+<data name='Pause' xml:space='preserve'><value>Пауза с текущего времени</value></data>
+<data name='Paste' xml:space='preserve'><value>Вставить текст</value></data>
+<data name='Copy' xml:space='preserve'><value>Копировать текст</value></data>
+<data name='Duplicate' xml:space='preserve'><value>Дубликат</value></data>
+<data name='Remove' xml:space='preserve'><value>Удалять</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>Играть</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>Пауза</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>Открыть музыкальный файл</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>Полная музыка содержит музыкальный файл и файл с текстами песен.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>Файлы Lyric с расширением lrc могут отображаться синхронно в различных цифровых проигрывателях. Тексты песен LRC - это специальный формат для текстов, основанный на простом тексте, который содержит «теги» в форме «*: *». Впервые он был предложен г-ном Го Сянсяном (Джохан) и использован в его программе. Этот вид файла с текстами песен можно использовать для реализации функции караоке (требуется специальная программа), а также их можно просматривать и редактировать с помощью обычного программного обеспечения для обработки текстов.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>Полная музыка включает в себя название, исполнителя, альбом, редактор текстов, смещение времени и тексты песен.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>В области предварительного просмотра вы можете скопировать или просмотреть тексты песен.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>В области редактирования вы можете нажать кнопку «Добавить», чтобы добавить тексты песен, и нажать кнопку «Меню» для управления текущими текстами песен.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>Начать писать тексты песен</value></data>
+
+ </root>

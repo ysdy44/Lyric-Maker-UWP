@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name='$DisplayName' xml:space='preserve'><value>Textersteller</value></data>
+<data name='$Untitled' xml:space='preserve'><value>Unbenannt</value></data>
+<data name='$InputText' xml:space='preserve'><value>Bitte Text eingeben</value></data>
+<data name='New' xml:space='preserve'><value>Neu</value></data>
+<data name='Open' xml:space='preserve'><value>.lrc-Datei öffnen</value></data>
+<data name='Save' xml:space='preserve'><value>Speichern Sie die .lrc-Datei</value></data>
+<data name='Tutorial' xml:space='preserve'><value>Tutorials</value></data>
+<data name='Setting' xml:space='preserve'><value>Einrichten</value></data>
+<data name='Speed' xml:space='preserve'><value>Geschwindigkeit</value></data>
+<data name='Zoom' xml:space='preserve'><value>Zoomen</value></data>
+<data name='ZoomIn' xml:space='preserve'><value>vergrößern</value></data>
+<data name='ZoomOut' xml:space='preserve'><value>Rauszoomen</value></data>
+<data name='Splite' xml:space='preserve'><value>Trennen</value></data>
+<data name='Info' xml:space='preserve'><value>Information</value></data>
+<data name='Lyrics' xml:space='preserve'><value>Text</value></data>
+<data name='Title' xml:space='preserve'><value>Titel</value></data>
+<data name='Artist' xml:space='preserve'><value>Künstler</value></data>
+<data name='Album' xml:space='preserve'><value>Album</value></data>
+<data name='LyricsEditor' xml:space='preserve'><value>Texteditor</value></data>
+<data name='TimeOffset' xml:space='preserve'><value>Zeitverschiebung</value></data>
+<data name='Find' xml:space='preserve'><value>Finden</value></data>
+<data name='Add' xml:space='preserve'><value>Hinzufügen</value></data>
+<data name='Move' xml:space='preserve'><value>Handy, Mobiltelefon</value></data>
+<data name='Play' xml:space='preserve'><value>Abspielen (ab der aktuellen Uhrzeit)</value></data>
+<data name='Pause' xml:space='preserve'><value>Pause (ab der aktuellen Uhrzeit)</value></data>
+<data name='Paste' xml:space='preserve'><value>Text einfügen</value></data>
+<data name='Copy' xml:space='preserve'><value>Text kopieren</value></data>
+<data name='Duplicate' xml:space='preserve'><value>Kopieren</value></data>
+<data name='Remove' xml:space='preserve'><value>Entfernen</value></data>
+<data name='PlayMusic' xml:space='preserve'><value>abspielen</value></data>
+<data name='PauseMusic' xml:space='preserve'><value>Auszeit</value></data>
+<data name='OpenMusic' xml:space='preserve'><value>Musikdatei öffnen</value></data>
+<data name='Tutorial00' xml:space='preserve'><value>Eine komplette Musik enthält eine Musikdatei und eine Liedtextdatei.</value></data>
+<data name='Tutorial01' xml:space='preserve'><value>Lyric-Dateien mit der Endung lrc können synchron in verschiedenen digitalen Playern angezeigt werden. LRC-Text ist ein spezielles Format für Texte, die auf Klartext basieren und "Tags" in der Form "*:*" enthalten. Es wurde zuerst von Herrn Guo Xiangxiang (Djohan) vorgeschlagen und in seinem Programm verwendet. Diese Art von Liedtextdatei kann verwendet werden, um die Karaoke-Funktion zu realisieren (ein spezielles Programm ist erforderlich) und kann mit gewöhnlicher Textverarbeitungssoftware angezeigt und bearbeitet werden.</value></data>
+<data name='Tutorial02' xml:space='preserve'><value>Die komplette Musik umfasst Titel, Interpret, Album, Texteditor, Zeitversatz und Text.</value></data>
+<data name='Tutorial03' xml:space='preserve'><value>Im Vorschaubereich können Sie den Songtext kopieren oder in der Vorschau anzeigen.</value></data>
+<data name='Tutorial04' xml:space='preserve'><value>Im Bearbeitungsbereich können Sie auf die Schaltfläche Hinzufügen klicken, um Liedtext hinzuzufügen, und auf die Menüschaltfläche klicken, um den aktuellen Liedtext zu bearbeiten.</value></data>
+<data name='Tutorial05' xml:space='preserve'><value>Songtexte erstellen</value></data>
+
+ </root>
