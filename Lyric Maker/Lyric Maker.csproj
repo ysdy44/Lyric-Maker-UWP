@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Lyrics\Lyric.cs" />
     <Compile Include="MainPage.Construct.cs" />
+    <Compile Include="MainPage.Method.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
