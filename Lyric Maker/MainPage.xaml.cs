@@ -133,6 +133,228 @@ namespace Lyric_Maker
         public MainPage()
         {
             this.InitializeComponent();
+            this.ConstructFlowDirection();
+            this.ConstructStrings();
+
+
+            // Extend TitleBar
+            CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+
+
+            // Tick
+            this.Timer.Tick += (s, e) =>
+            {
+                if (this.MediaPlayer.Source is null)
+                    this.Position += this.SpeedInterval;
+                else
+                    this.Position = this.MediaPlayer.PlaybackSession.Position;
+
+                if (this.Duration == TimeSpan.Zero || this.Position >= this.Duration)
+                    this.IsPlaying = false;
+            };
+
+
+            // Size
+            base.SizeChanged += (s, e) =>
+            {
+                if (e.NewSize == e.PreviousSize) return;
+                if (e.NewSize.Width == e.PreviousSize.Width) return;
+
+                double height = e.NewSize.Height;
+                this.Row01.MaxHeight = height - this.Row01.MinHeight - this.Row02.MinHeight - this.Row03.MinHeight - 2;
+            };
+
+            this.ControlScrollViewer.SizeChanged += (s, e) =>
+            {
+                if (e.NewSize == e.PreviousSize) return;
+                if (e.NewSize.Width == e.PreviousSize.Width) return;
+
+                double height = e.NewSize.Height;
+                double heightHalf = height / 2;
+                this.ControlCanvas.Margin = new Thickness(0, heightHalf, 0, heightHalf);
+            };
+
+            this.LineCanvas.SizeChanged += (s, e) =>
+            {
+                if (e.NewSize == e.PreviousSize) return;
+                if (e.NewSize.Height == e.PreviousSize.Height) return;
+
+                foreach (Lyric item in this.ObservableCollection)
+                {
+                    item.Length = e.NewSize.Width;
+                }
+            };
+
+
+            // Pane
+            this.PaneListView.ItemClick += (s, e) =>
+            {
+                if (e.ClickedItem is StackPanel item &&
+                    item.Children.FirstOrDefault() is Border border &&
+                    border.Child is SymbolIcon symbolIcon)
+                {
+                    this.IsPlaying = false;
+                    base.IsEnabled = false;
+                    switch (symbolIcon.Symbol)
+                    {
+                        case Symbol.Add: this.New(); break;
+                        case Symbol.OpenFile: this.Open(); break;
+                        case Symbol.Save: this.Save(); break;
+                        case Symbol.Emoji: base.Frame.Navigate(typeof(TutorialPage)); break;
+                        case Symbol.Setting: break;
+                    }
+                    base.IsEnabled = true;
+                }
+            };
+
+            // Speed
+            foreach (object item in this.SpeedListView.Items)
+            {
+                if (item is RadioButton radioButton)
+                {
+                    radioButton.Click += (s, e) =>
+                    {
+                        if (radioButton.Content is double value)
+                        {
+                            this.MediaPlayer.PlaybackSession.PlaybackRate = value;
+                            this.SpeedInterval = TimeSpan.FromMilliseconds(100 * value);
+                        }
+                    };
+                }
+            }
+
+
+            // SplitButton
+            this.PhoneSplitButton.Click += (s, e) => this.SplitView.IsPaneOpen = true;
+            this.PCSplitButton.Click += (s, e) =>
+            {
+                switch (this.SplitView.DisplayMode)
+                {
+                    case SplitViewDisplayMode.Overlay:
+                        this.SplitView.IsPaneOpen = false;
+                        break;
+                    case SplitViewDisplayMode.CompactOverlay:
+                    case SplitViewDisplayMode.CompactInline:
+                        this.SplitView.IsPaneOpen = !this.SplitView.IsPaneOpen;
+                        break;
+                }
+            };
+
+
+            // TextBox
+            this.TitleTextBox.KeyDown += (s, e) => tabSelect(e.Key, this.ArtistTextBox);
+            this.ArtistTextBox.KeyDown += (s, e) => tabSelect(e.Key, this.AlbumTextBox);
+            this.AlbumTextBox.KeyDown += (s, e) => tabSelect(e.Key, this.LyricsEditorTextBox);
+            this.LyricsEditorTextBox.KeyDown += (s, e) => tabSelect(e.Key, this.TitleTextBox);
+            void tabSelect(VirtualKey key, TextBox nextTextBox)
+            {
+                if (key == VirtualKey.Enter)
+                {
+                    nextTextBox.Focus(FocusState.Programmatic);
+                    nextTextBox.SelectAll();
+                }
+            }
+
+
+            // AppBar
+            this.AddButton.Click += (s, e) => this.Add();
+            this.MoveCommand.Click += (s, item) => this.Move(item);
+            this.PlayCommand.Click += (s, item) =>
+            {
+                TimeSpan time = item.Time;
+                this.Position = time;
+                this.MediaPlayer.PlaybackSession.Position = time;
+
+                if (this.IsPlaying == false) this.IsPlaying = true;
+            };
+            this.PauseCommand.Click += (s, item) =>
+            {
+                TimeSpan time = item.Time;
+                this.Position = time;
+                this.MediaPlayer.PlaybackSession.Position = time;
+
+                if (this.IsPlaying == true) this.IsPlaying = false;
+            };
+            this.PasteCommand.Click += async (s, item) =>
+            {
+                DataPackageView clipboard = Clipboard.GetContent();
+                if (clipboard.Contains(StandardDataFormats.Text))
+                {
+                    item.Text = await clipboard.GetTextAsync();
+                }
+            };
+            this.CopyCommand.Click += (s, item) =>
+            {
+                DataPackage dataPackage = new DataPackage
+                {
+                    RequestedOperation = DataPackageOperation.Copy
+                };
+                dataPackage.SetText(item.Text);
+                Clipboard.SetContent(dataPackage);
+            };
+            this.DuplicateCommand.Click += (s, item) => this.Duplicate(item);
+            this.RemoveCommand.Click += (s, item) => this.Remove(item);
+
+
+            // Zoom
+            this.ZoomListView.ItemClick += (s, e) =>
+            {
+                if (e.ClickedItem is SymbolIcon item)
+                {
+                    this.EditerPivot.SelectedIndex = 1;
+                    switch (item.Symbol)
+                    {
+                        case Symbol.Zoom: this.Zoom(); break;
+                        case Symbol.ZoomIn: this.ZoomIn(); break;
+                        case Symbol.ZoomOut: this.ZoomOut(); break;
+                        default: break;
+                    }
+                }
+            };
+
+
+            // Music
+            this.PlayMusicButton.Click += (s, e) =>
+            {
+                if (this.Position >= this.Duration)
+                    this.Position = TimeSpan.Zero;
+                this.IsPlaying = true;
+            };
+            this.PauseMusicButton.Click += (s, e) => this.IsPlaying = false;
+            this.OpenMusicButton.Click += async (s, e) =>
+            {
+                this.IsPlaying = false;
+                base.IsEnabled = false;
+                await this.OpenMusic();
+                base.IsEnabled = true;
+                this.IsPlaying = true;
+            };
+
+
+            // Position
+            this.ControlScrollViewer.DirectManipulationStarted += (s, e) => { if (this.IsPlaying) this.IsPlayingCore = false; };
+            this.ControlScrollViewer.DirectManipulationCompleted += (s, e) => { if (this.IsPlaying) this.IsPlayingCore = true; };
+
+
+            this.PositionSlider.ValueChangedStarted += (s, e) =>
+            {
+                if (this.IsPlaying) this.IsPlayingCore = false;
+
+                TimeSpan position = this.DoubleToTimeSpanConverter(this.PositionSlider.Value);
+                this.MediaPlayer.PlaybackSession.Position = position;
+                this.Position = position;
+            };
+            this.PositionSlider.ValueChangedDelta += (s, e) =>
+            {
+                TimeSpan position = this.DoubleToTimeSpanConverter(e.NewValue);
+                this.MediaPlayer.PlaybackSession.Position = position;
+                this.Position = position;
+            };
+            this.PositionSlider.ValueChangedCompleted += (s, e) =>
+            {
+                if (this.IsPlaying) this.IsPlayingCore = true;
+            };
         }
     }
 }
