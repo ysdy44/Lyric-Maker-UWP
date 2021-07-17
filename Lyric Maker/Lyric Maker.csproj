@@ -129,6 +129,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Elements\ApplicationTitleBarExtension.cs" />
     <Compile Include="Lyrics\LyricData.cs" />
     <Compile Include="Lyrics\LyricSpan.xaml.cs">
       <DependentUpon>LyricSpan.xaml</DependentUpon>
