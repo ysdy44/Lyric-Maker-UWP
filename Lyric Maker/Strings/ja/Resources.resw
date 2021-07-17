@@ -60,7 +60,7 @@
   </resheader>
 <data name='$DisplayName' xml:space='preserve'><value>歌詞メーカー</value></data>
 <data name='$Untitled' xml:space='preserve'><value>無題</value></data>
-<data name='$InputText' xml:space='preserve'><value>Facebook</value></data>
+<data name='$InputText' xml:space='preserve'><value>テキストを入力してください</value></data>
 <data name='New' xml:space='preserve'><value>新着</value></data>
 <data name='Open' xml:space='preserve'><value>.lrcファイルを開く</value></data>
 <data name='Save' xml:space='preserve'><value>.lrcファイルを保存する</value></data>

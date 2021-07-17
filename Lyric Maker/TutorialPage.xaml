@@ -144,8 +144,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Viewbox MaxWidth="324">
-                    <Border Width="324" HorizontalAlignment="Center" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <Viewbox MaxWidth="348">
+                    <Border Padding="12,0" MinWidth="348" HorizontalAlignment="Center" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                         <TextBlock x:Name="PreviewTextBlock" FontSize="20" IsTextSelectionEnabled="True"> 
                             <LineBreak/> 
                             <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">ti</Run><Run>:</Run><Run>]</Run>

@@ -227,11 +227,6 @@
         <SplitView.Pane>
             <ListView x:Name="PaneListView" SelectionMode="None" IsItemClickEnabled="True">
 
-                <ListView.ItemContainerTransitions>
-                    <TransitionCollection>
-                    </TransitionCollection>
-                </ListView.ItemContainerTransitions>
-
                 <ListView.Header>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -463,11 +458,6 @@
                                     <Setter Property="Padding" Value="4,0"/>
                                 </Style>
                             </ListView.ItemContainerStyle>
-
-                            <ListView.ItemContainerTransitions>
-                                <TransitionCollection>
-                                </TransitionCollection>
-                            </ListView.ItemContainerTransitions>
 
                             <ListViewItem>
                                 <TextBox x:Name="TitleTextBox" Grid.Row="1" Margin="0,2,0,6" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>

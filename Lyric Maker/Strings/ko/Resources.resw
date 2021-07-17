@@ -60,7 +60,7 @@
   </resheader>
 <data name='$DisplayName' xml:space='preserve'><value>가사 메이커</value></data>
 <data name='$Untitled' xml:space='preserve'><value>무제</value></data>
-<data name='$InputText' xml:space='preserve'><value>Facebook</value></data>
+<data name='$InputText' xml:space='preserve'><value>텍스트를 입력하십시오</value></data>
 <data name='New' xml:space='preserve'><value>새로운</value></data>
 <data name='Open' xml:space='preserve'><value>.lrc 파일 열기</value></data>
 <data name='Save' xml:space='preserve'><value>.lrc 파일 저장</value></data>
