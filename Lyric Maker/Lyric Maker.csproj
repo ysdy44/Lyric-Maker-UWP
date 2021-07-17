@@ -132,6 +132,7 @@
     <Compile Include="Elements\ApplicationTitleBarExtension.cs" />
     <Compile Include="Elements\GridSpliterButton.cs" />
     <Compile Include="Elements\PositionSlider.cs" />
+    <Compile Include="Elements\RelayCommand.cs" />
     <Compile Include="Lyrics\LyricData.cs" />
     <Compile Include="Lyrics\LyricSpan.xaml.cs">
       <DependentUpon>LyricSpan.xaml</DependentUpon>
