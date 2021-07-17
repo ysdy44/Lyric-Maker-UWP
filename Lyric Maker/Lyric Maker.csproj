@@ -130,6 +130,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lyrics\LyricData.cs" />
+    <Compile Include="Lyrics\LyricSpan.xaml.cs">
+      <DependentUpon>LyricSpan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -226,6 +229,10 @@
     <PRIResource Include="Strings\ar\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Lyrics\LyricSpan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
