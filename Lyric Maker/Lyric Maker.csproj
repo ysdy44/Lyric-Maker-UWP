@@ -133,6 +133,7 @@
     <Compile Include="Lyrics\LyricSpan.xaml.cs">
       <DependentUpon>LyricSpan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lyrics\Lyric.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lyric_Maker.TimeTexts
+namespace Lyric_Maker.Lyrics
 {
     /// <summary>
     /// Data of Lyric.
