@@ -130,6 +130,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\LineCanvas.cs" />
+    <Compile Include="Controls\ControlCanvas.cs" />
     <Compile Include="Elements\ApplicationTitleBarExtension.cs" />
     <Compile Include="Elements\GridSpliterButton.cs" />
     <Compile Include="Elements\PositionSlider.cs" />
