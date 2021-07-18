@@ -47,6 +47,15 @@
 
 
             <!--Style-->
+            <Style x:Key="AppRoundedBorderStyle" TargetType="Border">
+                <Setter Property="Margin" Value="1,0"/>
+                <Setter Property="Height" Value="38"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderThickness" Value="0.5,0.5,0.5,1.5"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
+                <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+            </Style>
+            <!--Style-->
             <Style TargetType="TextBox">
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>
