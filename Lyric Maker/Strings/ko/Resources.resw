@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>가사 메이커</value></data>
 <data name='$Untitled' xml:space='preserve'><value>무제</value></data>
 <data name='$InputText' xml:space='preserve'><value>텍스트를 입력하십시오</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>취소</value></data>
+<data name='OK' xml:space='preserve'><value>확인</value></data>
 <data name='New' xml:space='preserve'><value>새로운</value></data>
 <data name='Open' xml:space='preserve'><value>.lrc 파일 열기</value></data>
 <data name='Save' xml:space='preserve'><value>.lrc 파일 저장</value></data>
 <data name='Tutorial' xml:space='preserve'><value>튜토리얼</value></data>
 <data name='Setting' xml:space='preserve'><value>환경</value></data>
+<data name='About' xml:space='preserve'><value>약...</value></data>
 <data name='Speed' xml:space='preserve'><value>속도</value></data>
 <data name='Zoom' xml:space='preserve'><value>줌</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>확대</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>미리보기 영역에서 가사를 복사하거나 미리 볼 수 있습니다.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>편집 영역에서 추가 버튼을 클릭하여 가사를 추가하고 메뉴 버튼을 클릭하여 현재 가사를 조작할 수 있습니다.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>가사 만들기 시작</value></data>
+<data name='Documentation' xml:space='preserve'><value>선적 서류 비치</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>피드백</value></data>
 
  </root>

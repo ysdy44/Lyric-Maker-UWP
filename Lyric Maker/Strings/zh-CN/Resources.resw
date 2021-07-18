@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>作词</value></data>
 <data name='$Untitled' xml:space='preserve'><value>未命名</value></data>
 <data name='$InputText' xml:space='preserve'><value>请输入文本</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>取消</value></data>
+<data name='OK' xml:space='preserve'><value>确定</value></data>
 <data name='New' xml:space='preserve'><value>新建</value></data>
 <data name='Open' xml:space='preserve'><value>打开 .lrc 文件</value></data>
 <data name='Save' xml:space='preserve'><value>保存 .lrc 文件</value></data>
 <data name='Tutorial' xml:space='preserve'><value>教程</value></data>
 <data name='Setting' xml:space='preserve'><value>设置</value></data>
+<data name='About' xml:space='preserve'><value>关于...</value></data>
 <data name='Speed' xml:space='preserve'><value>变速</value></data>
 <data name='Zoom' xml:space='preserve'><value>缩放</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>放大</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>在预览区，您可以复制或预览歌词。</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>在编辑区，你可以单击添加按钮来添加歌词，单击菜单按钮来操作当前歌词。</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>开始制作歌词</value></data>
+<data name='Documentation' xml:space='preserve'><value>文档</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>反馈</value></data>
 
  </root>

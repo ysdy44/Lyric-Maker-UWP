@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>Tekst Maker</value></data>
 <data name='$Untitled' xml:space='preserve'><value>Geen titel</value></data>
 <data name='$InputText' xml:space='preserve'><value>Gelieve de tekst in te voeren</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>annuleren</value></data>
+<data name='OK' xml:space='preserve'><value>OK</value></data>
 <data name='New' xml:space='preserve'><value>Nieuw</value></data>
 <data name='Open' xml:space='preserve'><value>.lrc-bestand openen</value></data>
 <data name='Save' xml:space='preserve'><value>.lrc-bestand opslaan</value></data>
 <data name='Tutorial' xml:space='preserve'><value>Tutorials</value></data>
 <data name='Setting' xml:space='preserve'><value>Instelling</value></data>
+<data name='About' xml:space='preserve'><value>Over...</value></data>
 <data name='Speed' xml:space='preserve'><value>Snelheid</value></data>
 <data name='Zoom' xml:space='preserve'><value>Zoom</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>In zoomen</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>In het voorbeeldgebied kunt u de songtekst kopiëren of bekijken.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>In het bewerkingsgebied kunt u op de knop Toevoegen klikken om songteksten toe te voegen en op de menuknop klikken om de huidige songteksten te manipuleren.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>Begin met het maken van teksten</value></data>
+<data name='Documentation' xml:space='preserve'><value>Documentatie</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>Feedback</value></data>
 
  </root>

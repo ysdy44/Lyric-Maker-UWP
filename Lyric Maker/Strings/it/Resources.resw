@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>Creatore di testi</value></data>
 <data name='$Untitled' xml:space='preserve'><value>Senza titolo</value></data>
 <data name='$InputText' xml:space='preserve'><value>Inserisci il testo</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>Annulla</value></data>
+<data name='OK' xml:space='preserve'><value>ok</value></data>
 <data name='New' xml:space='preserve'><value>Nuovo</value></data>
 <data name='Open' xml:space='preserve'><value>Apri file .lrc</value></data>
 <data name='Save' xml:space='preserve'><value>Salva file .lrc</value></data>
 <data name='Tutorial' xml:space='preserve'><value>Tutorial</value></data>
 <data name='Setting' xml:space='preserve'><value>Ambientazione</value></data>
+<data name='About' xml:space='preserve'><value>Di...</value></data>
 <data name='Speed' xml:space='preserve'><value>Velocità</value></data>
 <data name='Zoom' xml:space='preserve'><value>Ingrandisci</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>Ingrandire</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>Nell'area Anteprima, puoi copiare o visualizzare in anteprima i testi.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>Nell'area di modifica, puoi fare clic sul pulsante Aggiungi per aggiungere testi e fare clic sul pulsante Menu per manipolare i testi correnti.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>Inizia a creare testi</value></data>
+<data name='Documentation' xml:space='preserve'><value>Documentazione</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>Risposta</value></data>
 
  </root>

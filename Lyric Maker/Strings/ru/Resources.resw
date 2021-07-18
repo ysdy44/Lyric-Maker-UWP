@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
 <data name='$Untitled' xml:space='preserve'><value>Без названия</value></data>
 <data name='$InputText' xml:space='preserve'><value>Пожалуйста, введите текст</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>Отмена</value></data>
+<data name='OK' xml:space='preserve'><value>Ok</value></data>
 <data name='New' xml:space='preserve'><value>Новый</value></data>
 <data name='Open' xml:space='preserve'><value>Открыть файл .lrc</value></data>
 <data name='Save' xml:space='preserve'><value>Сохранить файл .lrc</value></data>
 <data name='Tutorial' xml:space='preserve'><value>Учебники</value></data>
 <data name='Setting' xml:space='preserve'><value>Параметр</value></data>
+<data name='About' xml:space='preserve'><value>О...</value></data>
 <data name='Speed' xml:space='preserve'><value>Скорость</value></data>
 <data name='Zoom' xml:space='preserve'><value>Увеличить</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>Увеличить</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>В области предварительного просмотра вы можете скопировать или просмотреть тексты песен.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>В области редактирования вы можете нажать кнопку «Добавить», чтобы добавить тексты песен, и нажать кнопку «Меню» для управления текущими текстами песен.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>Начать писать тексты песен</value></data>
+<data name='Documentation' xml:space='preserve'><value>Документация</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>Обратная связь</value></data>
 
  </root>

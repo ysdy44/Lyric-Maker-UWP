@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
 <data name='$Untitled' xml:space='preserve'><value>Sin título</value></data>
 <data name='$InputText' xml:space='preserve'><value>Introduce el texto</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>Cancelar</value></data>
+<data name='OK' xml:space='preserve'><value>OK</value></data>
 <data name='New' xml:space='preserve'><value>Nuevo</value></data>
 <data name='Open' xml:space='preserve'><value>Abrir archivo .lrc</value></data>
 <data name='Save' xml:space='preserve'><value>Guardar archivo .lrc</value></data>
 <data name='Tutorial' xml:space='preserve'><value>Tutoriales</value></data>
 <data name='Setting' xml:space='preserve'><value>Configuración</value></data>
+<data name='About' xml:space='preserve'><value>Sobre...</value></data>
 <data name='Speed' xml:space='preserve'><value>Velocidad</value></data>
 <data name='Zoom' xml:space='preserve'><value>Zoom</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>Acercarse</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>En el área Vista previa, puede copiar o obtener una vista previa de las letras.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>En el área de Edición, puede hacer clic en el botón Agregar para agregar letras y hacer clic en el botón Menú para manipular las letras actuales.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>Empezar a hacer letras</value></data>
+<data name='Documentation' xml:space='preserve'><value>Documentación</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>Realimentación</value></data>
 
  </root>

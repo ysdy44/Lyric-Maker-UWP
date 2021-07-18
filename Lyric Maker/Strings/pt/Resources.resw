@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
 <data name='$Untitled' xml:space='preserve'><value>Sem título</value></data>
 <data name='$InputText' xml:space='preserve'><value>Introduza o texto</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>Cancelar</value></data>
+<data name='OK' xml:space='preserve'><value>OK</value></data>
 <data name='New' xml:space='preserve'><value>Novo</value></data>
 <data name='Open' xml:space='preserve'><value>Abrir arquivo .lrc</value></data>
 <data name='Save' xml:space='preserve'><value>Salvar arquivo .lrc</value></data>
 <data name='Tutorial' xml:space='preserve'><value>Tutoriais</value></data>
 <data name='Setting' xml:space='preserve'><value>Contexto</value></data>
+<data name='About' xml:space='preserve'><value>Sobre...</value></data>
 <data name='Speed' xml:space='preserve'><value>Velocidade</value></data>
 <data name='Zoom' xml:space='preserve'><value>Ampliação</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>Mais Zoom</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>Na área de visualização, você pode copiar ou visualizar as letras.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>Na área de edição, você pode clicar no botão Adicionar para adicionar a letra e clicar no botão Menu para manipular a letra atual.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>Comece a fazer letras</value></data>
+<data name='Documentation' xml:space='preserve'><value>Documentação</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>Comentários</value></data>
 
  </root>

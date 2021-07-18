@@ -61,11 +61,17 @@
 <data name='$DisplayName' xml:space='preserve'><value>Lyric Maker</value></data>
 <data name='$Untitled' xml:space='preserve'><value>Untitled</value></data>
 <data name='$InputText' xml:space='preserve'><value>Please input the text</value></data>
+<data name='$Version' xml:space='preserve'><value>1.0.0</value></data>
+<data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
+<data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
+<data name='Cancel' xml:space='preserve'><value>Cancel</value></data>
+<data name='OK' xml:space='preserve'><value>OK</value></data>
 <data name='New' xml:space='preserve'><value>New</value></data>
 <data name='Open' xml:space='preserve'><value>Open .lrc File</value></data>
 <data name='Save' xml:space='preserve'><value>Save .lrc File</value></data>
 <data name='Tutorial' xml:space='preserve'><value>Tutorials</value></data>
 <data name='Setting' xml:space='preserve'><value>Setting</value></data>
+<data name='About' xml:space='preserve'><value>About...</value></data>
 <data name='Speed' xml:space='preserve'><value>Speed</value></data>
 <data name='Zoom' xml:space='preserve'><value>Zoom</value></data>
 <data name='ZoomIn' xml:space='preserve'><value>Zoom In</value></data>
@@ -96,5 +102,8 @@
 <data name='Tutorial03' xml:space='preserve'><value>In the Preview area, you can Copy or Preview the Lyrics.</value></data>
 <data name='Tutorial04' xml:space='preserve'><value>In the Editing area, you can click the Add button to Add Lyrics, and click the Menu Button to Manipulate the Current Lyrics.</value></data>
 <data name='Tutorial05' xml:space='preserve'><value>Start Making Lyrics</value></data>
+<data name='Documentation' xml:space='preserve'><value>Documentation</value></data>
+<data name='Github' xml:space='preserve'><value>Github</value></data>
+<data name='Feedback' xml:space='preserve'><value>Feedback</value></data>
 
  </root>
