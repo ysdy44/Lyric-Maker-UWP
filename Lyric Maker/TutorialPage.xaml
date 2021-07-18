@@ -30,8 +30,8 @@
                         <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="DeepPink">
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <ContentControl Height="12"/>
-                                <SymbolIcon Symbol="Mute"/>
-                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <SymbolIcon Symbol="Mute" Foreground="White"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
                                     mp3
                                 </TextBlock>
                             </StackPanel>
@@ -42,8 +42,8 @@
                         <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="Orange">
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <ContentControl Height="12"/>
-                                <SymbolIcon Symbol="MusicInfo"/>
-                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <SymbolIcon Symbol="MusicInfo" Foreground="White"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
                                     lrc
                                 </TextBlock>
                             </StackPanel>
@@ -196,8 +196,8 @@
 
                         <Border Width="54" Height="50" HorizontalAlignment="Right" Background="{ThemeResource SystemColorControlAccentBrush}">
                             <StackPanel VerticalAlignment="Center">
-                                <SymbolIcon Symbol="Add"/>
-                                <TextBlock x:Name="AddTextBlock" FontSize="10" HorizontalAlignment="Center"/>
+                                <SymbolIcon Symbol="Add" Foreground="White"/>
+                                <TextBlock x:Name="AddTextBlock" FontSize="10" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
                         </Border>
 
@@ -294,7 +294,7 @@
 
                 <TextBlock x:Name="Tutorial04TextBlock" Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <Button x:Name="Button" Grid.Row="4" Padding="12,2" Width="Auto" MinWidth="200" FontWeight="Bold" HorizontalAlignment="Center" Background="{ThemeResource SystemColorControlAccentBrush}"/>
+                <Button x:Name="Button" Grid.Row="4" Padding="12,2" Width="Auto" MinWidth="200" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" Background="{ThemeResource SystemColorControlAccentBrush}"/>
 
             </Grid>
         </FlipViewItem>

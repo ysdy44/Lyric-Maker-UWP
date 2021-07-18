@@ -88,7 +88,15 @@ namespace Lyric_Maker.Elements
             };
             base.ManipulationDelta += (s, e) =>
             {
-                this.startingSpliterWidth += e.Delta.Translation.X;
+                switch (base.FlowDirection)
+                {
+                    case FlowDirection.LeftToRight:
+                        this.startingSpliterWidth += e.Delta.Translation.X;
+                        break;
+                    case FlowDirection.RightToLeft:
+                        this.startingSpliterWidth -= e.Delta.Translation.X;
+                        break;
+                }
                 this.SpliterWidth = this.startingSpliterWidth < 4 ? 4 : this.startingSpliterWidth;
                 this.startingTime += e.Delta.Translation.Y;
                 this.Time = this.DoubleToTimeSpanConverter(this.startingTime < 0 ? 0 : this.startingTime / this.Scale);
