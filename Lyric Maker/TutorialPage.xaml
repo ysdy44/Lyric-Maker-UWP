@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     >
 
-    <FlipView x:Name="FlipView">
+    <FlipView x:Name="FlipView" Background="{x:Null}">
 
 
         <FlipViewItem>

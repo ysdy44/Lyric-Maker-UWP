@@ -310,9 +310,18 @@
                 <ListViewItem>
                     <StackPanel Orientation="Horizontal">
                         <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="Emoji"/>
+                            <SymbolIcon Symbol="Help"/>
                         </Border>
                         <TextBlock x:Name="TutorialTextBlock" Margin="12,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="26" Height="26">
+                            <SymbolIcon Symbol="Important"/>
+                        </Border>
+                        <TextBlock x:Name="AboutTextBlock" Margin="12,0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
 

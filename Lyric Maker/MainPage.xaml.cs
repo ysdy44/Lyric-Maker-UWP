@@ -188,7 +188,7 @@ namespace Lyric_Maker
 
 
             // Pane
-            this.PaneListView.ItemClick += (s, e) =>
+            this.PaneListView.ItemClick += async (s, e) =>
             {
                 if (e.ClickedItem is StackPanel item &&
                     item.Children.FirstOrDefault() is Border border &&
@@ -201,7 +201,8 @@ namespace Lyric_Maker
                         case Symbol.Add: this.New(); break;
                         case Symbol.OpenFile: this.Open(); break;
                         case Symbol.Save: this.Save(); break;
-                        case Symbol.Emoji: base.Frame.Navigate(typeof(TutorialPage)); break;
+                        case Symbol.Help: base.Frame.Navigate(typeof(TutorialPage)); break;
+                        case Symbol.Important: await new AboutDialog().ShowAsync(); break;
                         case Symbol.Setting: break;
                     }
                     base.IsEnabled = true;

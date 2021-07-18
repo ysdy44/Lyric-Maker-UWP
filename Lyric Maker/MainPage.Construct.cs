@@ -39,6 +39,7 @@ namespace Lyric_Maker
             this.OpenTextBlock.Text = resource.GetString("Open");
             this.SaveTextBlock.Text = resource.GetString("Save");
             this.TutorialTextBlock.Text = resource.GetString("Tutorial");
+            this.AboutTextBlock.Text = resource.GetString("About");
             this.SettingTextBlock.Text = resource.GetString("Setting");
             this.SpeedListView.Header = resource.GetString("Speed");
 
