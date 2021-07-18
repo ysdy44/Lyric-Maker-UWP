@@ -78,21 +78,50 @@ namespace Lyric_Maker
 
         public void Duplicate(Lyric item)
         {
-            int index = this.ObservableCollection.IndexOf(item);
-            if (index < 0) return;
-            if (index >= this.ObservableCollection.Count) return;
-
-            this.ObservableCollection.Add(new Lyric(this.LyricTemplate)
             {
-                Length = this.LineCanvas.Length,
-                Duration = this.Duration,
-                Time = item.Time,
-                Text = item.Text,
-                Scale = this.ControlCanvas.Scale
-            });
+                int index = this.ObservableCollection.IndexOf(item);
+                if (index < 0) return;
+                if (index >= this.ObservableCollection.Count) return;
+            }
+
+            {
+                int index = this.GetIndexAtPosition(this.ObservableCollection, item.Time);
+
+                TimeSpan time;
+                {
+                    if (index == -1)
+                        time = item.Time + TimeSpan.FromSeconds(1);
+                    else
+                    {
+                        Lyric next = this.ObservableCollection[index];
+
+                        if (next.Time - item.Time > TimeSpan.FromSeconds(2))
+                            time = item.Time + TimeSpan.FromSeconds(1);
+                        else
+                        {
+                            double seconds = item.Time.TotalSeconds + next.Time.TotalSeconds;
+                            time = TimeSpan.FromSeconds(seconds / 2);
+                        }
+                    }
+                }
+
+                Lyric lyric = new Lyric(this.LyricTemplate)
+                {
+                    Length = this.LineCanvas.Length,
+                    Duration = this.Duration,
+                    Time = time,
+                    Text = item.Text,
+                    Scale = this.ControlCanvas.Scale
+                };
+
+                if (index == -1)
+                    this.ObservableCollection.Add(lyric);
+                else
+                    this.ObservableCollection.Insert(index, lyric);
+            }
         }
 
-        public void Remove(Lyric item) => this.ObservableCollection.Add(item);
+        public void Remove(Lyric item) => this.ObservableCollection.Remove(item);
 
 
         private int GetIndexAtPosition(IList<Lyric> lyrics, TimeSpan position)
