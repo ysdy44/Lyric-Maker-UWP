@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Lyric_Maker.Lyrics
 {
@@ -8,20 +9,19 @@ namespace Lyric_Maker.Lyrics
     /// </summary>
     public struct LyricData
     {
-        //@Converter
-        private static int CharToIntConverter(char value)
+        //@Static
+        private static readonly Regex LyricRegex = new Regex(@"\[(?<minutes>\d{2}).(?<seconds>\d{2}).(?<milliseconds>\d{1,3})\]\s?(?<content>.*)");
+        private static readonly Regex TagRegex = new Regex(@"\[.*:.*\]");
+        private static Regex GetTagRegex(string tag) => new Regex($@"\[{tag}:(.*)\]");
+        private static int StringToInt(string milliseconds)
         {
-            switch (value)
+            int msLength = milliseconds.Length;
+            int msMete = int.Parse(milliseconds);
+            switch (msLength)
             {
-                case '1': return 1;
-                case '2': return 2;
-                case '3': return 3;
-                case '4': return 4;
-                case '5': return 5;
-                case '6': return 6;
-                case '7': return 7;
-                case '8': return 8;
-                case '9': return 9;
+                case 1: return msMete * 100;
+                case 2: return msMete * 10;
+                case 3: return msMete;
                 default: return 0;
             }
         }
@@ -39,24 +39,18 @@ namespace Lyric_Maker.Lyrics
         /// <param name="tag"> The mete tag. </param>
         public static string GetMete(IEnumerable<string> lines, string tag)
         {
-            string tag2 = $"[{tag}:";
+            Regex regex = LyricData.GetTagRegex(tag);
             foreach (string line in lines)
             {
-                // ti
-                if (line.Contains(tag) == false) continue;
-                // [ti:
-                if (line.Contains(tag2) == false) continue;
-
-                // [ti:Music]
-                string[] split = line.Split('[', ':', ']');
-                if (split.Length != 4) continue;
-
-                // ti
-                string tag3 = split[1].Trim();
-                // Music
-                string mete = split[2].Trim();
-
-                return mete;
+                string input = line.ToLower();
+                if (LyricData.TagRegex.IsMatch(line))
+                {
+                    Match titleMatch = regex.Match(input);
+                    if (titleMatch.Success)
+                    {
+                        return titleMatch.Groups[1].Value;
+                    }
+                }
             }
             return string.Empty;
         }
@@ -69,43 +63,22 @@ namespace Lyric_Maker.Lyrics
         {
             foreach (string line in lines)
             {
-                if (string.IsNullOrEmpty(line)) continue;
-
-                // [00:00.00] Text
-                string[] split = line.Split('[', ']');
-                if (split.Length != 3) continue;
-
-                // 00:00.00
-                string time = split[1].Trim();
-                // Text
-                string text = split[2].Trim();
-
-                // 00:00
-                if (time.Length == 5) yield return new LyricData
+                Match match = LyricData.LyricRegex.Match(line);
+                if (match.Success)
                 {
-                    Text = text,
-                    Time = new TimeSpan
-                    (
-                         days: 0,
-                         hours: 0,
-                         minutes: 10 * LyricData.CharToIntConverter(time[0]) + LyricData.CharToIntConverter(time[1]),
-                         seconds: 10 * LyricData.CharToIntConverter(time[3]) + LyricData.CharToIntConverter(time[4])
-                    )
-                };
-
-                // 00:00.00
-                else if (time.Length == 8) yield return new LyricData
-                {
-                    Text = text,
-                    Time = new TimeSpan
-                    (
-                         days: 0,
-                         hours: 0,
-                         minutes: 10 * LyricData.CharToIntConverter(time[0]) + LyricData.CharToIntConverter(time[1]),
-                         seconds: 10 * LyricData.CharToIntConverter(time[3]) + LyricData.CharToIntConverter(time[4]),
-                         milliseconds: 100 * LyricData.CharToIntConverter(time[6]) + 10 * LyricData.CharToIntConverter(time[7])
-                    )
-                };
+                    yield return new LyricData
+                    {
+                        Text = match.Groups["content"].Value,
+                        Time = new TimeSpan
+                        (
+                            days: 0,
+                            hours: 0,
+                            minutes: int.Parse(match.Groups["minutes"].Value),
+                            seconds: int.Parse(match.Groups["seconds"].Value),
+                            milliseconds: LyricData.StringToInt(match.Groups["milliseconds"].Value)
+                        )
+                    };
+                }
             }
         }
 
