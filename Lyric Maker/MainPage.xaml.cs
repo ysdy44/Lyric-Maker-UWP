@@ -159,7 +159,7 @@ namespace Lyric_Maker
             base.SizeChanged += (s, e) =>
             {
                 if (e.NewSize == e.PreviousSize) return;
-                if (e.NewSize.Width == e.PreviousSize.Width) return;
+                if (e.NewSize.Height == e.PreviousSize.Height) return;
 
                 double height = e.NewSize.Height;
                 this.Row01.MaxHeight = height - this.Row01.MinHeight - this.Row02.MinHeight - this.Row03.MinHeight - 2;
@@ -168,7 +168,7 @@ namespace Lyric_Maker
             this.ControlScrollViewer.SizeChanged += (s, e) =>
             {
                 if (e.NewSize == e.PreviousSize) return;
-                if (e.NewSize.Width == e.PreviousSize.Width) return;
+                if (e.NewSize.Height == e.PreviousSize.Height) return;
 
                 double height = e.NewSize.Height;
                 double heightHalf = height / 2;
@@ -178,7 +178,7 @@ namespace Lyric_Maker
             this.LineCanvas.SizeChanged += (s, e) =>
             {
                 if (e.NewSize == e.PreviousSize) return;
-                if (e.NewSize.Height == e.PreviousSize.Height) return;
+                if (e.NewSize.Width == e.PreviousSize.Width) return;
 
                 foreach (Lyric item in this.ObservableCollection)
                 {

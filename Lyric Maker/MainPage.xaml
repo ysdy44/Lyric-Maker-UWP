@@ -167,6 +167,9 @@
                         <Setter Target="EditerPivot.(Grid.Row)" Value="2"/>
                         <Setter Target="EditerPivot.(Grid.RowSpan)" Value="1"/>
                         <Setter Target="EditerPivot.Background" Value="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <Setter Target="LineGrid.(Grid.Column)" Value="0"/>
+                        <Setter Target="LineGrid.(Grid.Row)" Value="2"/>
+                        <Setter Target="LineGrid.(Grid.RowSpan)" Value="1"/>
 
                         <Setter Target="SpliteRectangle.Visibility" Value="Visible"/>
                         <Setter Target="GridSpliterButton.Visibility" Value="Visible"/>
@@ -517,7 +520,7 @@
 
                 </Pivot>
 
-                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="0,49,0,0"
+                <Grid x:Name="LineGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="0,49,0,0"
                       Visibility="{x:Bind IndexToVisibilityConverter(EditerPivot.SelectedIndex), Mode=OneWay}">
                     <Line IsHitTestVisible="False"
                           X1="22" X2="{x:Bind Line.X2, Mode=OneWay}" 
