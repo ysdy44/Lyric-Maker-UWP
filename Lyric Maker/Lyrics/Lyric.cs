@@ -26,7 +26,7 @@ namespace Lyric_Maker.Lyrics
         {
             Width = 1,
             Height = 46,
-            Fill = new SolidColorBrush(Colors.White)
+            Fill = App.Current.Resources["SystemColorControlAccentBrush"] as Brush
         };
         public ContentControl Control { get; }
 
@@ -126,7 +126,7 @@ namespace Lyric_Maker.Lyrics
                 this.text = value;
                 this.OnPropertyChanged(nameof(Text)); // Notify 
 
-                this.Line.Height = string.IsNullOrEmpty(value) ? 2 : 2 + value.Length * 2;
+                this.Line.Height = string.IsNullOrEmpty(value) ? 1 : value.Length;
                 this.Span.TextRun.Text = value;
             }
         }

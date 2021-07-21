@@ -490,7 +490,7 @@
                             </ListViewItem>
 
                             <ListViewItem>
-                                <Slider x:Name="TimeOffsetSlider" Grid.Row="1" Value="0" Maximum="5000" Minimum="-5000" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
+                                <Slider x:Name="TimeOffsetSlider" Grid.Row="1" Value="0" Maximum="500" Minimum="-500" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
                             </ListViewItem>
 
                         </ListView>
