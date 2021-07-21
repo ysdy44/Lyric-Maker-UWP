@@ -1,10 +1,12 @@
 ﻿using Lyric_Maker.Lyrics;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Media.Playback;
+using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -152,6 +154,36 @@ namespace Lyric_Maker
 
                 if (this.Duration == TimeSpan.Zero || this.Position >= this.Duration)
                     this.IsPlaying = false;
+            };
+
+
+            // Drag and Drop 
+            base.AllowDrop = true;
+            base.Drop += async (s, e) =>
+            {
+                base.IsEnabled = false;
+                if (e.DataView.Contains(StandardDataFormats.StorageItems))
+                {
+                    IReadOnlyList<IStorageItem> items = await e.DataView.GetStorageItemsAsync();
+                    foreach (IStorageItem item in items)
+                    {
+                        if (item is StorageFile file)
+                        {
+                            bool isLyric = this.IsLyric(file);
+                            if (isLyric) { await this.Open(file); break; }
+
+                            bool isMusic = this.IsMusic(file);
+                            if (isMusic) { await this.OpenMusic(file); break; }
+                        }
+                    }
+                }
+                base.IsEnabled = true;
+            };
+            base.DragOver += (s, e) =>
+            {
+                e.AcceptedOperation = DataPackageOperation.Copy;
+                //e.DragUIOverride.Caption = 
+                e.DragUIOverride.IsCaptionVisible = e.DragUIOverride.IsContentVisible = e.DragUIOverride.IsGlyphVisible = true;
             };
 
 

@@ -157,19 +157,32 @@ namespace Lyric_Maker
             this.ObservableCollection.Clear();
         }
 
-        public async void Open()
+        public bool IsLyric(StorageFile file)
         {
-            StorageFile openFile = await new FileOpenPicker
+            string fileType = file.FileType.ToLower();
+            switch (fileType)
             {
-                SuggestedStartLocation = PickerLocationId.Desktop,
-                FileTypeFilter =
-                {
-                    ".lrc"
-                }
-            }.PickSingleFileAsync();
-            if (openFile is null) return;
+                case ".lrc":
+                case ".txt":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        public async Task Open() => await this.Open(await new FileOpenPicker
+        {
+            SuggestedStartLocation = PickerLocationId.Desktop,
+            FileTypeFilter =
+            {
+                ".lrc",
+                ".txt"
+            }
+        }.PickSingleFileAsync());
+        public async Task Open(StorageFile lyricFile)
+        {
+            if (lyricFile is null) return;
 
-            IList<string> lines = await FileIO.ReadLinesAsync(openFile);
+            IList<string> lines = await FileIO.ReadLinesAsync(lyricFile);
             if (lines is null) return;
             if (lines.Count <= 0) return;
 
@@ -205,15 +218,21 @@ namespace Lyric_Maker
             }
         }
 
-        public async void Save()
+        public async Task Save()
         {
+            string suggested =
+                string.IsNullOrEmpty(this.MusicName) == false ?
+                this.MusicName :
+                this.Untitled;
+
             StorageFile saveFile = await new FileSavePicker
             {
                 SuggestedStartLocation = PickerLocationId.Desktop,
-                SuggestedFileName = string.IsNullOrEmpty(this.MusicName) == false ? this.MusicName : this.Untitled,
+                SuggestedFileName = suggested,
                 FileTypeChoices =
                 {
-                    { "LRC", new[] { ".lrc" }}
+                    { "LRC", new[] { ".lrc" }},
+                    { "TXT", new[] { ".txt" }}
                 }
             }.PickSaveFileAsync();
             if (saveFile is null) return;
@@ -222,23 +241,36 @@ namespace Lyric_Maker
         }
 
 
-        public async Task OpenMusic()
+        public bool IsMusic(StorageFile file)
         {
-            FileOpenPicker picker = new FileOpenPicker
+            string fileType = file.FileType.ToLower();
+            switch (fileType)
             {
-                SuggestedStartLocation = PickerLocationId.MusicLibrary,
-                ViewMode = PickerViewMode.Thumbnail,
-                FileTypeFilter =
-                {
-                    ".mp3",
-                    ".wmv",
-                    ".m4a",
-                    ".wav",
-                    ".wma"
-                }
-            };
-
-            StorageFile musicFile = await picker.PickSingleFileAsync();
+                case ".mp3":
+                case ".wmv":
+                case ".m4a":
+                case ".wav":
+                case ".wma":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        public async Task OpenMusic() => await this.OpenMusic(await new FileOpenPicker
+        {
+            SuggestedStartLocation = PickerLocationId.MusicLibrary,
+            ViewMode = PickerViewMode.Thumbnail,
+            FileTypeFilter =
+            {
+                ".mp3",
+                ".wmv",
+                ".m4a",
+                ".wav",
+                ".wma"
+            }
+        }.PickSingleFileAsync());
+        public async Task OpenMusic(StorageFile musicFile)
+        {
             if (musicFile is null) return;
 
             MediaSource source = MediaSource.CreateFromStorageFile(musicFile);

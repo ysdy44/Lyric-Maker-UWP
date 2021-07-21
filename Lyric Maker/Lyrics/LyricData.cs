@@ -11,6 +11,7 @@ namespace Lyric_Maker.Lyrics
     {
         //@Static
         private static readonly Regex LyricRegex = new Regex(@"\[(?<minutes>\d{2}).(?<seconds>\d{2}).(?<milliseconds>\d{1,3})\]\s?(?<content>.*)");
+        private static readonly Regex Lyric2Regex = new Regex(@"\[(?<minutes>\d{2}).(?<seconds>\d{2})\]\s?(?<content>.*)");
         private static readonly Regex TagRegex = new Regex(@"\[.*:.*\]");
         private static Regex GetTagRegex(string tag) => new Regex($@"\[{tag}:(.*)\]");
         private static int StringToInt(string milliseconds)
@@ -63,6 +64,24 @@ namespace Lyric_Maker.Lyrics
         {
             foreach (string line in lines)
             {
+                // 00:00
+                Match match2 = LyricData.Lyric2Regex.Match(line);
+                if (match2.Success)
+                {
+                    yield return new LyricData
+                    {
+                        Text = match2.Groups["content"].Value,
+                        Time = new TimeSpan
+                        (
+                            days: 0,
+                            hours: 0,
+                            minutes: int.Parse(match2.Groups["minutes"].Value),
+                            seconds: int.Parse(match2.Groups["seconds"].Value)
+                        )
+                    };
+                }
+
+                // 00:00.00
                 Match match = LyricData.LyricRegex.Match(line);
                 if (match.Success)
                 {
