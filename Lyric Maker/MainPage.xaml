@@ -661,7 +661,7 @@
                                                  Style="{StaticResource MediaSliderStyle}">
                                 <elements:PositionSlider.Header>
                                     <TextBlock x:Name="MusicNameTextBlock" FontSize="18" TextTrimming="WordEllipsis">
-                                        <Run Text="{x:Bind MusicName, Mode=OneWay}" FontWeight="Bold"/>
+                                        <Run Text="{x:Bind TitleTextBox.Text, Mode=OneWay}" FontWeight="Bold"/>
                                         <Run></Run>
                                         <Run x:Name="SubtitleRun" Foreground="{ThemeResource SystemAccentColorLight3}"/>
                                     </TextBlock>

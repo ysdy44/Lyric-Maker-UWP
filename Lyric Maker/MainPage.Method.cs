@@ -258,8 +258,8 @@ namespace Lyric_Maker
         public async Task Save()
         {
             string suggested =
-                string.IsNullOrEmpty(this.MusicName) == false ?
-                this.MusicName :
+                string.IsNullOrEmpty(this.TitleTextBox.Text) == false ?
+                this.TitleTextBox.Text :
                 this.Untitled;
 
             StorageFile saveFile = await new FileSavePicker

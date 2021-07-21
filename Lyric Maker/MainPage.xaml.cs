@@ -32,17 +32,6 @@ namespace Lyric_Maker
 
         #region DependencyProperty
 
-        /// <summary>
-        /// Gets or sets the music name.
-        /// </summary>
-        public string MusicName
-        {
-            get => (string)base.GetValue(MusicNameProperty);
-            set => base.SetValue(MusicNameProperty, value);
-        }
-        /// <summary> Identifies the <see cref="MainPage.MusicName"/> dependency property. </summary>
-        public static readonly DependencyProperty MusicNameProperty = DependencyProperty.Register(nameof(MusicName), typeof(string), typeof(MainPage), new PropertyMetadata(null));
-
 
         /// <summary> Gets or sets <see cref = "MainPage" />'s position. </summary>
         public TimeSpan Position
