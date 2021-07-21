@@ -27,10 +27,10 @@ namespace Lyric_Maker
         private TimeSpan DoubleToTimeSpanConverter(double value) => TimeSpan.FromSeconds(value);
         private double LineYToCanvasTopConverter(double value) => value - 6;
         private double LyricsToScaleYConverter(IList<Lyric> value) => value.Count == 0 ? 1 : 32 * value.Count / value.Sum(l => l.Line.Height);
+        private string LyricsToSubtitleConverter(IList<Lyric> value, TimeSpan position) => value.Count == 0 ? string.Empty : value.LastOrDefault(l => l.Time <= position)?.Text ?? string.Empty;
 
 
         #region DependencyProperty
-
 
         /// <summary>
         /// Gets or sets the music name.
@@ -64,6 +64,8 @@ namespace Lyric_Maker
                 double verticalOffset = position2;
                 bool disableAnimation = control.IsPlayingCore == false;
                 control.ControlScrollViewer.ChangeView(null, verticalOffset, null, disableAnimation);
+
+                control.SubtitleRun.Text = control.LyricsToSubtitleConverter(control.ObservableCollection, value);
             }
         }));
 

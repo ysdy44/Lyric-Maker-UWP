@@ -78,7 +78,7 @@ namespace Lyric_Maker
                 // None
             }
         }
-        
+
         public async void Paste(Lyric item)
         {
             DataPackageView clipboard = Clipboard.GetContent();
@@ -188,6 +188,7 @@ namespace Lyric_Maker
             this.ObservableCollection.Clear();
 
             this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
+            this.SubtitleRun.Text = this.LyricsToSubtitleConverter(this.ObservableCollection, this.Position);
         }
 
         public bool IsLyric(StorageFile file)
@@ -251,6 +252,7 @@ namespace Lyric_Maker
             }
 
             this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
+            this.SubtitleRun.Text = this.LyricsToSubtitleConverter(this.ObservableCollection, this.Position);
         }
 
         public async Task Save()
@@ -311,7 +313,6 @@ namespace Lyric_Maker
             MediaSource source = MediaSource.CreateFromStorageFile(musicFile);
             if (source is null) return;
             this.MediaPlayer.Source = source;
-            this.MusicName = musicFile.DisplayName;
             this.Position = TimeSpan.Zero;
 
             MusicProperties music = await musicFile.Properties.GetMusicPropertiesAsync();

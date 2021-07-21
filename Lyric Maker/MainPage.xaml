@@ -660,7 +660,11 @@
                                                  Maximum="{x:Bind TimeSpanToDoubleConverter(Duration), Mode=OneWay}"
                                                  Style="{StaticResource MediaSliderStyle}">
                                 <elements:PositionSlider.Header>
-                                    <TextBlock x:Name="MusicNameTextBlock" FontSize="18" FontWeight="Bold" TextTrimming="WordEllipsis" Text="{x:Bind MusicName, Mode=OneWay}"/>
+                                    <TextBlock x:Name="MusicNameTextBlock" FontSize="18" TextTrimming="WordEllipsis">
+                                        <Run Text="{x:Bind MusicName, Mode=OneWay}" FontWeight="Bold"/>
+                                        <Run></Run>
+                                        <Run x:Name="SubtitleRun" Foreground="{ThemeResource SystemAccentColorLight3}"/>
+                                    </TextBlock>
                                 </elements:PositionSlider.Header>
                             </elements:PositionSlider>
 
