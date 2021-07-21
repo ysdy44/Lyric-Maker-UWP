@@ -26,6 +26,7 @@ namespace Lyric_Maker
         private double TimeSpanToDoubleConverter(TimeSpan value) => value.TotalSeconds;
         private TimeSpan DoubleToTimeSpanConverter(double value) => TimeSpan.FromSeconds(value);
         private double LineYToCanvasTopConverter(double value) => value - 6;
+        private double LyricsToScaleYConverter(IList<Lyric> value) => value.Count == 0 ? 1 : 32 * value.Count / value.Sum(l => l.Line.Height);
 
 
         #region DependencyProperty
@@ -231,8 +232,8 @@ namespace Lyric_Maker
                     switch (symbolIcon.Symbol)
                     {
                         case Symbol.Add: this.New(); break;
-                        case Symbol.OpenFile: this.Open(); break;
-                        case Symbol.Save: this.Save(); break;
+                        case Symbol.OpenFile: await this.Open(); break;
+                        case Symbol.Save: await this.Save(); break;
                         case Symbol.Help: base.Frame.Navigate(typeof(TutorialPage)); break;
                         case Symbol.Important: await new AboutDialog().ShowAsync(); break;
                         case Symbol.Setting: break;
@@ -309,23 +310,8 @@ namespace Lyric_Maker
 
                 if (this.IsPlaying == true) this.IsPlaying = false;
             };
-            this.PasteCommand.Click += async (s, item) =>
-            {
-                DataPackageView clipboard = Clipboard.GetContent();
-                if (clipboard.Contains(StandardDataFormats.Text))
-                {
-                    item.Text = await clipboard.GetTextAsync();
-                }
-            };
-            this.CopyCommand.Click += (s, item) =>
-            {
-                DataPackage dataPackage = new DataPackage
-                {
-                    RequestedOperation = DataPackageOperation.Copy
-                };
-                dataPackage.SetText(item.Text);
-                Clipboard.SetContent(dataPackage);
-            };
+            this.PasteCommand.Click += (s, item) => this.Paste(item);
+            this.CopyCommand.Click += (s, item) => this.Copy(item);
             this.DuplicateCommand.Click += (s, item) => this.Duplicate(item);
             this.RemoveCommand.Click += (s, item) => this.Remove(item);
 

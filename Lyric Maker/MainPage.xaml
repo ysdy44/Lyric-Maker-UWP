@@ -175,6 +175,7 @@
                         <Setter Target="GridSpliterButton.Visibility" Value="Visible"/>
                         <Setter Target="GridSpliterButton.SpliterHeight" Value="276"/>
 
+                        <Setter Target="LineBorderScaleTransform.ScaleY" Value="0.6"/>
                         <Setter Target="LineCanvas.Margin" Value="12,0,16,0"/>
                         <Setter Target="PositionSlider.Margin" Value="2,0"/>
                         <Setter Target="MusicNameTextBlock.FontSize" Value="14"/>
@@ -206,6 +207,7 @@
                         <Setter Target="SpanScrollViewer.Margin" Value="0,50,0,0"/>
                         <Setter Target="SpanScrollViewer.Background" Value="{x:Null}"/>
 
+                        <Setter Target="LineBorderScaleTransform.ScaleY" Value="0.8"/>
                         <Setter Target="LineCanvas.Margin" Value="18,0,22,0"/>
                         <Setter Target="PositionSlider.Margin" Value="8,0"/>
                         <Setter Target="MusicNameTextBlock.FontSize" Value="16"/>
@@ -642,8 +644,16 @@
                                 <SymbolIcon Symbol="Pause"/>
                             </Button>
 
-                            <controls:LineCanvas x:Name="LineCanvas" IsHitTestVisible="False" Grid.Column="3" Margin="18,0,22,0"
-                                                 ItemSource="{x:Bind ObservableCollection}"/>
+                            <Border IsHitTestVisible="False" Grid.Column="3" Margin="18,0,22,0">
+                                <Border.RenderTransform>
+                                    <ScaleTransform x:Name="LineBorderScaleTransform" CenterY="0" ScaleY="1"/>
+                                </Border.RenderTransform>
+                                <controls:LineCanvas x:Name="LineCanvas" ItemSource="{x:Bind ObservableCollection}">
+                                    <controls:LineCanvas.RenderTransform>
+                                        <ScaleTransform x:Name="LineScaleTransform" CenterY="0" ScaleY="1"/>
+                                    </controls:LineCanvas.RenderTransform>
+                                </controls:LineCanvas>
+                            </Border>
                             <elements:PositionSlider x:Name="PositionSlider" Grid.Column="3" Margin="8,0" IsThumbToolTipEnabled="False" 
                                                  Value="{x:Bind TimeSpanToDoubleConverter(Position), Mode=OneWay}"
                                                  Minimum="0"

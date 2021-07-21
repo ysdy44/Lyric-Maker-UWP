@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Media.Core;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
@@ -37,6 +38,8 @@ namespace Lyric_Maker
                 this.ObservableCollection.Add(lyric);
             else
                 this.ObservableCollection.Insert(index, lyric);
+
+            this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
         }
 
         public void Move(Lyric item)
@@ -74,6 +77,29 @@ namespace Lyric_Maker
             {
                 // None
             }
+        }
+        
+        public async void Paste(Lyric item)
+        {
+            DataPackageView clipboard = Clipboard.GetContent();
+            if (clipboard.Contains(StandardDataFormats.Text))
+            {
+                item.Text = await clipboard.GetTextAsync();
+            }
+
+            this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
+        }
+
+        public void Copy(Lyric item)
+        {
+            DataPackage dataPackage = new DataPackage
+            {
+                RequestedOperation = DataPackageOperation.Copy
+            };
+            dataPackage.SetText(item.Text);
+            Clipboard.SetContent(dataPackage);
+
+            this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
         }
 
         public void Duplicate(Lyric item)
@@ -121,7 +147,12 @@ namespace Lyric_Maker
             }
         }
 
-        public void Remove(Lyric item) => this.ObservableCollection.Remove(item);
+        public void Remove(Lyric item)
+        {
+            this.ObservableCollection.Remove(item);
+
+            this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
+        }
 
 
         private int GetIndexAtPosition(IList<Lyric> lyrics, TimeSpan position)
@@ -155,6 +186,8 @@ namespace Lyric_Maker
             this.LyricsEditorTextBox.Text = string.Empty;
             this.TimeOffsetSlider.Value = 0;
             this.ObservableCollection.Clear();
+
+            this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
         }
 
         public bool IsLyric(StorageFile file)
@@ -216,6 +249,8 @@ namespace Lyric_Maker
                     Duration = this.Duration
                 });
             }
+
+            this.LineScaleTransform.ScaleY = this.LyricsToScaleYConverter(this.ObservableCollection);
         }
 
         public async Task Save()
