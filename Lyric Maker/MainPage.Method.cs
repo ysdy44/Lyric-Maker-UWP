@@ -235,8 +235,6 @@ namespace Lyric_Maker
             if (datas.Count() <= 0) return;
 
             this.Duration = datas.Max(t => t.Time) + TimeSpan.FromSeconds(5);
-            double duration = this.TimeSpanToDoubleConverter(this.Duration);
-            this.ControlCanvas.Height = duration * this.ControlCanvas.Scale;
 
             this.ObservableCollection.Clear();
             foreach (LyricData data in datas)

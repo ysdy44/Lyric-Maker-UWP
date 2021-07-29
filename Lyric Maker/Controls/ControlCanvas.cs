@@ -57,8 +57,8 @@ namespace Lyric_Maker.Controls
 
             if (e.NewValue is TimeSpan value)
             {
-                double duration = control.TimeSpanToDoubleConverter(value);
-                control.Height = duration * control.Scale;
+                control.UpdateHeight(value, control.Scale);
+                control.UpdateLines(control.ActualWidth, control.ActualHeight, control.Scale);
             }
         }));
 

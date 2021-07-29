@@ -65,7 +65,18 @@ namespace Lyric_Maker
             set => base.SetValue(DurationProperty, value);
         }
         /// <summary> Identifies the <see cref = "MainPage.Duration" /> dependency property. </summary>
-        public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(nameof(Duration), typeof(TimeSpan), typeof(MainPage), new PropertyMetadata(TimeSpan.FromMinutes(10)));
+        public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(nameof(Duration), typeof(TimeSpan), typeof(MainPage), new PropertyMetadata(TimeSpan.FromMinutes(10), (sender, e) =>
+        {
+            MainPage control = (MainPage)sender;
+
+            if (e.NewValue is TimeSpan value)
+            {
+                foreach (Lyric item in control.ObservableCollection)
+                {
+                    item.Duration = value;
+                }            
+            }
+        }));
 
 
         /// <summary> Gets or sets <see cref = "MainPage" />'s state of playing. </summary>

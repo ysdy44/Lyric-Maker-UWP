@@ -30,13 +30,12 @@
                 </Grid.ColumnDefinitions>
 
                 <Border CornerRadius="2" VerticalAlignment="Center" BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                    <TextBlock Margin="4,0,4,2" VerticalAlignment="Center" Foreground="{ThemeResource SystemBaseMediumColor}">
+                    <TextBlock Margin="4,0,4,2" VerticalAlignment="Center">
                         <Run>[</Run>
                         <Run Text="{x:Bind TimeSpanToStringConverter(Time), Mode=OneWay}"/>
                         <Run>]</Run>
                     </TextBlock>
                 </Border>
-
                 <Border Grid.Column="1" Width="{x:Bind SpliterWidth, Mode=OneWay}" Height="4" VerticalAlignment="Center" BorderThickness="0,1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 
                 <Border Grid.Column="2" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -245,9 +244,9 @@
                                 <SymbolIcon Symbol="GlobalNavigationButton"/>
                             </Button>
                             <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                                <Run FontSize="24" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
-                                <Run Foreground="{ThemeResource AppForeground}">/</Run>
-                                <Run Foreground="{ThemeResource AppForeground}" Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                                <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
+                                <Run>/</Run>
+                                <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -504,7 +503,7 @@
                             </TextBlock>
                         </PivotItem.Header>
                         <ScrollViewer x:Name="ControlScrollViewer">
-                            <controls:ControlCanvas x:Name="ControlCanvas" ItemSource="{x:Bind ObservableCollection}">
+                            <controls:ControlCanvas x:Name="ControlCanvas" ItemSource="{x:Bind ObservableCollection}" Duration="{x:Bind Duration, Mode=OneWay}">
                                 <Line x:Name="Line" IsHitTestVisible="False" Canvas.ZIndex="1" 
                                       X1="22" Y1="0" X2="512" Y2="0" 
                                       StrokeThickness="2" Stroke="Orange"
@@ -541,11 +540,11 @@
                     <Button x:Name="PhoneSplitButton" Visibility="Collapsed">
                         <SymbolIcon Symbol="GlobalNavigationButton"/>
                     </Button>
-                    <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                        <Run FontSize="24" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
-                        <Run Foreground="{ThemeResource AppForeground}">/</Run>
-                        <Run Foreground="{ThemeResource AppForeground}" Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
-                    </TextBlock>
+                        <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
+                            <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
+                            <Run>/</Run>
+                            <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                        </TextBlock>
                 </StackPanel>
 
 
@@ -630,9 +629,7 @@
 
                             <Button x:Name="PlayMusicButton" Grid.Column="2" Visibility="{x:Bind ReverseBooleanToVisibilityConverter(IsPlaying), Mode=OneWay}">
                                 <ToolTipService.ToolTip>
-                                    <ToolTip x:Name="PlayMusicToolTip">
-                                        Play
-                                    </ToolTip>
+                                    <ToolTip x:Name="PlayMusicToolTip"/>
                                 </ToolTipService.ToolTip>
                                 <SymbolIcon Symbol="Play"/>
                             </Button>
