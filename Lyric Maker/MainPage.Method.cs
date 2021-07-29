@@ -27,6 +27,7 @@ namespace Lyric_Maker
             Lyric lyric = new Lyric(this.LyricTemplate)
             {
                 Length = this.LineCanvas.Length,
+                Position = this.Position,
                 Duration = this.Duration,
                 Time = this.Position,
                 Text = this.InputText,
@@ -134,6 +135,7 @@ namespace Lyric_Maker
                 Lyric lyric = new Lyric(this.LyricTemplate)
                 {
                     Length = this.LineCanvas.Length,
+                    Position = this.Position,
                     Duration = this.Duration,
                     Time = time,
                     Text = item.Text,
@@ -241,11 +243,12 @@ namespace Lyric_Maker
             {
                 this.ObservableCollection.Add(new Lyric(this.LyricTemplate)
                 {
-                    Text = data.Text,
-                    Time = data.Time,
                     Length = this.LineCanvas.Length,
-                    Scale = this.ControlCanvas.Scale,
-                    Duration = this.Duration
+                    Position = this.Position,
+                    Duration = this.Duration,
+                    Time = data.Time,
+                    Text = data.Text,
+                    Scale = this.ControlCanvas.Scale
                 });
             }
 

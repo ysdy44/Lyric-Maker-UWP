@@ -42,9 +42,7 @@
                              MoveCommandParameter="{Binding}"
                              MoveCommand="{Binding ElementName=MoveButton, Path=Command, Mode=OneWay}">
                     <TextBlock Margin="4,0,4,2" VerticalAlignment="Center">
-                        <Run>[</Run>
-                        <Run Text="{x:Bind TimeSpanToStringConverter(Time), Mode=OneWay}"/>
-                        <Run>]</Run>
+                        <Run>[</Run><Run Text="{x:Bind TimeSpanToStringConverter(Time), Mode=OneWay}"/><Run>]</Run>
                     </TextBlock>
                 </times:TimeButton>
 
@@ -60,6 +58,7 @@
                         <elements:TimeMoveButton x:Name="TimeMoveButton" Grid.Column="1" Width="50" Height="40" 
                                                  SpliterWidth="{x:Bind SpliterWidth, Mode=TwoWay}"
                                                  Time="{x:Bind Time, Mode=TwoWay}"
+                                                 Snap="{x:Bind Position, Mode=OneWay}"
                                                  Scale="{x:Bind Scale, Mode=OneWay}"
                                                  MoveCommandParameter="{Binding}"
                                                  MoveCommand="{Binding ElementName=MoveButton, Path=Command, Mode=OneWay}"
@@ -257,9 +256,7 @@
                             </Button>
                             <times:TimeButton Padding="2,0" Time="{x:Bind Duration, Mode=TwoWay}" Style="{StaticResource TextBlockButtonStyle}">
                                 <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                                    <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
-                                    <Run>/</Run>
-                                    <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                                    <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/><Run>/</Run><Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
                                 </TextBlock>
                             </times:TimeButton>
                         </StackPanel>
@@ -556,9 +553,7 @@
                     </Button>
                     <times:TimeButton Padding="2,0" Time="{x:Bind Duration, Mode=TwoWay}" Style="{StaticResource TextBlockButtonStyle}">
                         <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                            <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
-                            <Run>/</Run>
-                            <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                            <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/><Run>/</Run><Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
                         </TextBlock>
                     </times:TimeButton>
                 </StackPanel>

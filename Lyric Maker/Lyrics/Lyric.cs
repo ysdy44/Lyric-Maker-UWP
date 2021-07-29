@@ -87,6 +87,19 @@ namespace Lyric_Maker.Lyrics
         private TimeSpan time = TimeSpan.Zero;
 
 
+        /// <summary> Gets or sets the position. </summary>
+        public TimeSpan Position
+        {
+            get => this.position;
+            set
+            {
+                this.position = value;
+                this.OnPropertyChanged(nameof(Position)); // Notify 
+            }
+        }
+        private TimeSpan position = TimeSpan.Zero;
+
+
         /// <summary> Gets or sets the duration. </summary>
         public TimeSpan Duration
         {

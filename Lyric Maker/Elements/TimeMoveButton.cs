@@ -30,6 +30,7 @@ namespace Lyric_Maker.Elements
         /// <summary> Identifies the <see cref="TimeMoveButton.SpliterWidth"/> dependency property. </summary>
         public static readonly DependencyProperty SpliterWidthProperty = DependencyProperty.Register(nameof(SpliterWidth), typeof(double), typeof(TimeMoveButton), new PropertyMetadata(4d));
 
+
         public TimeSpan Time
         {
             get => (TimeSpan)base.GetValue(TimeProperty);
@@ -37,6 +38,16 @@ namespace Lyric_Maker.Elements
         }
         /// <summary> Identifies the <see cref="TimeMoveButton.Time"/> dependency property. </summary>
         public static readonly DependencyProperty TimeProperty = DependencyProperty.Register(nameof(Time), typeof(TimeSpan), typeof(TimeMoveButton), new PropertyMetadata(TimeSpan.Zero));
+
+
+        public TimeSpan Snap
+        {
+            get => (TimeSpan)base.GetValue(SnapProperty);
+            set => base.SetValue(SnapProperty, value);
+        }
+        /// <summary> Identifies the <see cref="TimeMoveButton.Snap"/> dependency property. </summary>
+        public static readonly DependencyProperty SnapProperty = DependencyProperty.Register(nameof(Snap), typeof(TimeSpan), typeof(TimeMoveButton), new PropertyMetadata(TimeSpan.Zero));
+
 
         public double Scale
         {
@@ -69,6 +80,7 @@ namespace Lyric_Maker.Elements
 
         double startingSpliterWidth = 4;
         double startingTime = 0;
+        double startingSnap = 0;
         FlyoutBase startingFlyout = null;
 
 
@@ -83,6 +95,7 @@ namespace Lyric_Maker.Elements
             {
                 this.startingSpliterWidth = this.SpliterWidth;
                 this.startingTime = this.TimeSpanToDoubleConverter(this.Time) * this.Scale;
+                this.startingSnap = this.TimeSpanToDoubleConverter(this.Snap) * this.Scale;
                 this.startingFlyout = base.Flyout;
                 base.Flyout = null;
             };
@@ -99,10 +112,13 @@ namespace Lyric_Maker.Elements
                 }
                 this.SpliterWidth = this.startingSpliterWidth < 4 ? 4 : this.startingSpliterWidth;
                 this.startingTime += e.Delta.Translation.Y;
-                this.Time = this.DoubleToTimeSpanConverter(this.startingTime < 0 ? 0 : this.startingTime / this.Scale);
+
+                bool isSnap = 12 > Math.Abs(this.startingSnap - this.startingTime);
+                TimeSpan time = this.DoubleToTimeSpanConverter(this.startingTime < 0 ? 0 : this.startingTime / this.Scale);
+                this.Time = isSnap ? this.Snap : time;
             };
             base.ManipulationCompleted += async (s, e) =>
-            {        
+            {
                 this.MoveCommand?.Execute(this.MoveCommandParameter);
 
                 await Task.Delay(100);

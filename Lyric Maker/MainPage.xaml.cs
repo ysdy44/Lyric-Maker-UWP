@@ -55,6 +55,11 @@ namespace Lyric_Maker
                 control.ControlScrollViewer.ChangeView(null, verticalOffset, null, disableAnimation);
 
                 control.SubtitleRun.Text = control.LyricsToSubtitleConverter(control.ObservableCollection, value);
+
+                foreach (Lyric item in control.ObservableCollection)
+                {
+                    item.Position = value;
+                }
             }
         }));
 
