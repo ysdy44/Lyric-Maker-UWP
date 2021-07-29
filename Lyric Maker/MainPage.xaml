@@ -9,7 +9,8 @@
     xmlns:apiContractPresent5="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract,5)"
     xmlns:controls="using:Lyric_Maker.Controls"
     xmlns:elements="using:Lyric_Maker.Elements"
-    xmlns:lyrics="using:Lyric_Maker.Lyrics"
+    xmlns:times="using:Lyric_Maker.Times"
+    xmlns:lyrics="using:Lyric_Maker.Lyrics" 
     mc:Ignorable="d"
     apiContractNotPresent5:Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"
     apiContractPresent5:Background="{ThemeResource SystemControlAcrylicWindowBrush}"
@@ -29,13 +30,24 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border CornerRadius="2" VerticalAlignment="Center" BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <times:TimeButton 
+                             Padding="2,0"
+                             VerticalAlignment="Center"
+                             BorderThickness="1" 
+                             BorderBrush="{ThemeResource AppBorderBrush}" 
+                             Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+                             Style="{StaticResource TextBlockButtonStyle}"
+                             Time="{x:Bind Time, Mode=TwoWay}"
+                             Maximum="{x:Bind Duration, Mode=TwoWay}"
+                             MoveCommandParameter="{Binding}"
+                             MoveCommand="{Binding ElementName=MoveButton, Path=Command, Mode=OneWay}">
                     <TextBlock Margin="4,0,4,2" VerticalAlignment="Center">
                         <Run>[</Run>
                         <Run Text="{x:Bind TimeSpanToStringConverter(Time), Mode=OneWay}"/>
                         <Run>]</Run>
                     </TextBlock>
-                </Border>
+                </times:TimeButton>
+
                 <Border Grid.Column="1" Width="{x:Bind SpliterWidth, Mode=OneWay}" Height="4" VerticalAlignment="Center" BorderThickness="0,1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 
                 <Border Grid.Column="2" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -243,11 +255,13 @@
                             <Button x:Name="PCSplitButton">
                                 <SymbolIcon Symbol="GlobalNavigationButton"/>
                             </Button>
-                            <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                                <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
-                                <Run>/</Run>
-                                <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
-                            </TextBlock>
+                            <times:TimeButton Padding="2,0" Time="{x:Bind Duration, Mode=TwoWay}" Style="{StaticResource TextBlockButtonStyle}">
+                                <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
+                                    <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
+                                    <Run>/</Run>
+                                    <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                                </TextBlock>
+                            </times:TimeButton>
                         </StackPanel>
                     </Grid>
                 </ListView.Header>
@@ -540,11 +554,13 @@
                     <Button x:Name="PhoneSplitButton" Visibility="Collapsed">
                         <SymbolIcon Symbol="GlobalNavigationButton"/>
                     </Button>
+                    <times:TimeButton Padding="2,0" Time="{x:Bind Duration, Mode=TwoWay}" Style="{StaticResource TextBlockButtonStyle}">
                         <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
                             <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/>
                             <Run>/</Run>
                             <Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
                         </TextBlock>
+                    </times:TimeButton>
                 </StackPanel>
 
 
