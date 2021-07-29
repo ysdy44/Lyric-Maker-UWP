@@ -105,5 +105,9 @@
 <data name='Documentation' xml:space='preserve'><value>Documentación</value></data>
 <data name='Github' xml:space='preserve'><value>Github</value></data>
 <data name='Feedback' xml:space='preserve'><value>Realimentación</value></data>
+<data name='Hours' xml:space='preserve'><value>Stunden</value></data>
+<data name='Minutes' xml:space='preserve'><value>Minutos</value></data>
+<data name='Seconds' xml:space='preserve'><value>Segundos</value></data>
+<data name='Milliseconds' xml:space='preserve'><value>Milisegundos</value></data>
 
  </root>

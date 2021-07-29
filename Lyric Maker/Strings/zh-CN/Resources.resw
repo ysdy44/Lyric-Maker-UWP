@@ -105,5 +105,9 @@
 <data name='Documentation' xml:space='preserve'><value>文档</value></data>
 <data name='Github' xml:space='preserve'><value>Github</value></data>
 <data name='Feedback' xml:space='preserve'><value>反馈</value></data>
+<data name='Hours' xml:space='preserve'><value>时</value></data>
+<data name='Minutes' xml:space='preserve'><value>分</value></data>
+<data name='Seconds' xml:space='preserve'><value>秒</value></data>
+<data name='Milliseconds' xml:space='preserve'><value>毫秒</value></data>
 
  </root>
