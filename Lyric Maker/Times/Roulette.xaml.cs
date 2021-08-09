@@ -12,6 +12,10 @@ namespace Lyric_Maker.Times
     public sealed partial class Roulette : UserControl
     {
 
+        //@Delegate
+        /// <summary> Occurs when the clicked selected item. </summary>
+        public event EventHandler<int> ItemClick;
+
         //@Converter
         private int OffsetToIndexConverter(double value)
         {
@@ -186,7 +190,10 @@ namespace Lyric_Maker.Times
             {
                 if (item.Tag is int index)
                 {
-                    this.Index = index;
+                    if (this.Index == index)
+                        this.ItemClick?.Invoke(this, index);//Delegate
+                    else
+                        this.Index = index;
                 }
             }
         }

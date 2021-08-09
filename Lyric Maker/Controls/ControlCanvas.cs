@@ -37,9 +37,29 @@ namespace Lyric_Maker.Controls
 
             if (e.NewValue is object value)
             {
-                if ((control.ItemSourceNotify is null) == false) control.ItemSourceNotify.CollectionChanged -= control.ItemSourceNotify_CollectionChanged;
+                if ((control.ItemSourceNotify is null) is false)
+                {
+                    control.ItemSourceNotify.CollectionChanged -= control.ItemSourceNotify_CollectionChanged;
+                    if (control.ItemSourceNotify is IEnumerable<Lyric> items)
+                    {
+                        foreach (Lyric item in items)
+                        {
+                            control.Children.Remove(item.Control);
+                        }
+                    }
+                }
                 control.ItemSourceNotify = value as INotifyCollectionChanged;
-                if ((control.ItemSourceNotify is null) == false) control.ItemSourceNotify.CollectionChanged += control.ItemSourceNotify_CollectionChanged;
+                if ((control.ItemSourceNotify is null) is false)
+                {
+                    control.ItemSourceNotify.CollectionChanged += control.ItemSourceNotify_CollectionChanged;
+                    if (control.ItemSourceNotify is IEnumerable<Lyric> items)
+                    {
+                        foreach (Lyric item in items)
+                        {
+                            control.Children.Add(item.Control);
+                        }
+                    }
+                }
             }
         }));
 
@@ -91,7 +111,7 @@ namespace Lyric_Maker.Controls
 
         //@Construct
         /// <summary>
-        /// Initializes a PinCanvas. 
+        /// Initializes a ControlCanvas. 
         /// </summary>
         public ControlCanvas()
         {

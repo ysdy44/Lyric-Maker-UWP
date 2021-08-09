@@ -18,6 +18,7 @@
             </DispatcherTimer.Interval>
         </DispatcherTimer>
         <Style TargetType="ContentPresenter">
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Padding" Value="2"/>
             <Setter Property="Width" Value="60"/>
