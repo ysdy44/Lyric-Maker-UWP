@@ -11,17 +11,13 @@
     xmlns:elements="using:Lyric_Maker.Elements"
     xmlns:times="using:Lyric_Maker.Times"
     xmlns:lyrics="using:Lyric_Maker.Lyrics" 
-    mc:Ignorable="d"
-    apiContractNotPresent5:Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"
-    apiContractPresent5:Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+    mc:Ignorable="d"   
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     >
 
 
-    <Page.Resources>
+    <FrameworkElement.Resources>
         <!--DataTemplate-->
-        <DataTemplate x:Key="HeaderDataTemplate" x:DataType="x:Object">
-            <ContentControl Content="{x:Bind}" Margin="10,0" FontSize="14" FontWeight="Medium" Foreground="{ThemeResource AppForeground}"/>
-        </DataTemplate>
         <DataTemplate x:Name="LyricTemplate" x:DataType="lyrics:Lyric">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -54,7 +50,12 @@
                             <ColumnDefinition Width="*" MinWidth="128"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Margin="10,0" FontSize="14" FontWeight="Medium" Text="{x:Bind Text, Mode=TwoWay}" VerticalAlignment="Center"/>
+                        <TextBox 
+                            Margin="10,0"
+                            FontSize="14" FontWeight="Medium" 
+                            BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}"
+                            Text="{x:Bind Text, Mode=TwoWay}" 
+                            VerticalAlignment="Center"/>
                         <elements:TimeMoveButton x:Name="TimeMoveButton" Grid.Column="1" Width="50" Height="40" 
                                                  SpliterWidth="{x:Bind SpliterWidth, Mode=TwoWay}"
                                                  Time="{x:Bind Time, Mode=TwoWay}"
@@ -66,7 +67,7 @@
                             <ToolTipService.ToolTip>
                                 <ToolTip Content="{Binding ElementName=MoveButton, Path=Label, Mode=OneWay}"/>
                             </ToolTipService.ToolTip>
-                            <elements:TimeMoveButton.Flyout>
+                            <Button.Flyout>
                                 <MenuFlyout Placement="Bottom">
 
                                     <MenuFlyoutItem
@@ -74,7 +75,7 @@
                                         Command="{Binding ElementName=PlayButton, Path=Command, Mode=OneWay}"
                                         Text="{Binding ElementName=PlayButton, Path=Label, Mode=OneWay}">
                                         <MenuFlyoutItem.Icon>
-                                            <SymbolIcon Symbol="Play"/>
+                                            <SymbolIcon Symbol="Play" Foreground="{ThemeResource SystemColorControlAccentBrush}"/>
                                         </MenuFlyoutItem.Icon>
                                     </MenuFlyoutItem>
 
@@ -83,7 +84,7 @@
                                         Command="{Binding ElementName=PauseButton, Path=Command, Mode=OneWay}"
                                         Text="{Binding ElementName=PauseButton, Path=Label, Mode=OneWay}">
                                         <MenuFlyoutItem.Icon>
-                                            <SymbolIcon Symbol="Pause"/>
+                                            <SymbolIcon Symbol="Pause" Foreground="{ThemeResource SystemColorControlAccentBrush}"/>
                                         </MenuFlyoutItem.Icon>
                                     </MenuFlyoutItem>
 
@@ -94,7 +95,7 @@
                                         Command="{Binding ElementName=PasteButton, Path=Command, Mode=OneWay}"
                                         Text="{Binding ElementName=PasteButton, Path=Label, Mode=OneWay}">
                                         <MenuFlyoutItem.Icon>
-                                            <SymbolIcon Symbol="Paste"/>
+                                            <SymbolIcon Symbol="Pause" Foreground="{ThemeResource SystemColorControlAccentBrush}"/>
                                         </MenuFlyoutItem.Icon>
                                     </MenuFlyoutItem>
 
@@ -103,7 +104,7 @@
                                         Command="{Binding ElementName=CopyButton, Path=Command, Mode=OneWay}"
                                         Text="{Binding ElementName=CopyButton, Path=Label, Mode=OneWay}">
                                         <MenuFlyoutItem.Icon>
-                                            <SymbolIcon Symbol="Copy"/>
+                                            <SymbolIcon Symbol="Copy" Foreground="{ThemeResource SystemColorControlAccentBrush}"/>
                                         </MenuFlyoutItem.Icon>
                                     </MenuFlyoutItem>
 
@@ -114,7 +115,7 @@
                                         Command="{Binding ElementName=DuplicateButton, Path=Command, Mode=OneWay}"
                                         Text="{Binding ElementName=DuplicateButton, Path=Label, Mode=OneWay}">
                                         <MenuFlyoutItem.Icon>
-                                            <SymbolIcon Symbol="Copy" />
+                                            <SymbolIcon Symbol="Copy" Foreground="{ThemeResource SystemColorControlAccentBrush}"/>
                                         </MenuFlyoutItem.Icon>
                                     </MenuFlyoutItem>
 
@@ -128,7 +129,7 @@
                                     </MenuFlyoutItem>
 
                                 </MenuFlyout>
-                            </elements:TimeMoveButton.Flyout>
+                            </Button.Flyout>
                             <SymbolIcon Symbol="GlobalNavigationButton"/>
                         </elements:TimeMoveButton>
                     </Grid>
@@ -137,10 +138,10 @@
 
             </Grid>
         </DataTemplate>
-    </Page.Resources>
+    </FrameworkElement.Resources>
 
 
-    <SplitView x:Name="SplitView" DisplayMode="CompactInline" IsPaneOpen="True" OpenPaneLength="264" PaneBackground="{x:Null}">
+    <Grid>
 
         <!--VisualState-->
         <VisualStateManager.VisualStateGroups>
@@ -155,7 +156,10 @@
                         <Setter Target="HeaderStackPanel.Visibility" Value="Visible"/>
                         <Setter Target="SplitView.DisplayMode" Value="Overlay"/>
                         <Setter Target="SplitView.IsPaneOpen" Value="False"/>
-                        <Setter Target="SplitView.PaneBackground" Value="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <Setter Target = "SplitView.PaneBackground"
+                             apiContractNotPresent5:Value="{ThemeResource SystemColorControlAccentBrush}"
+                             apiContractPresent5:Value="{ThemeResource SystemControlAccentAcrylicElementAccentMediumHighBrush}"
+                        />
                         <Setter Target="ContentGrid.Background" Value="{x:Null}"/>
 
                         <Setter Target="HeaderStackPanel.Visibility" Value="Visible"/>
@@ -173,10 +177,9 @@
                         <Setter Target="SpanScrollViewer.Background" Value="{x:Null}"/>
                         <Setter Target="ZoomListView.(Grid.RowSpan)" Value="1"/>
 
-                        <Setter Target="EditerPivot.(Grid.Column)" Value="0"/>
-                        <Setter Target="EditerPivot.(Grid.Row)" Value="2"/>
-                        <Setter Target="EditerPivot.(Grid.RowSpan)" Value="1"/>
-                        <Setter Target="EditerPivot.Background" Value="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <Setter Target="EditerBorder.(Grid.Column)" Value="0"/>
+                        <Setter Target="EditerBorder.(Grid.Row)" Value="2"/>
+                        <Setter Target="EditerBorder.(Grid.RowSpan)" Value="1"/>
                         <Setter Target="LineGrid.(Grid.Column)" Value="0"/>
                         <Setter Target="LineGrid.(Grid.Row)" Value="2"/>
                         <Setter Target="LineGrid.(Grid.RowSpan)" Value="1"/>
@@ -201,7 +204,10 @@
                     <VisualState.Setters>
                         <Setter Target="SplitView.DisplayMode" Value="CompactOverlay"/>
                         <Setter Target="SplitView.IsPaneOpen" Value="False"/>
-                        <Setter Target="SplitView.PaneBackground" Value="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <Setter Target = "SplitView.PaneBackground"
+                             apiContractNotPresent5:Value="{ThemeResource SystemColorControlAccentBrush}"
+                             apiContractPresent5:Value="{ThemeResource SystemControlAccentAcrylicElementAccentMediumHighBrush}"
+                        />
                         <Setter Target="ContentGrid.Background" Value="{x:Null}"/>
 
                         <Setter Target="Column01.Width" Value="350"/>
@@ -238,123 +244,129 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+        <!--Extensions-->
+        <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="Transparent"/>
 
-        <SplitView.Pane>
-            <ListView x:Name="PaneListView" SelectionMode="None" IsItemClickEnabled="True">
+        <SplitView x:Name="SplitView" DisplayMode="CompactInline" IsPaneOpen="True" OpenPaneLength="264" PaneBackground="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
 
-                <ListView.Header>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="32"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock x:Name="PCAppTitleTextBlock" Grid.ColumnSpan="2" Margin="12,0" FontSize="12" VerticalAlignment="Center"
+            <SplitView.Pane>
+                <ListView x:Name="PaneListView" RequestedTheme="Dark" SelectionMode="None" IsItemClickEnabled="True">
+
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="PCAppTitleTextBlock" Grid.ColumnSpan="2" Margin="12,0" FontSize="12" VerticalAlignment="Center"
                                    Visibility="{x:Bind BooleanToVisibilityConverter(SplitView.IsPaneOpen), Mode=OneWay}"/>
-                        <StackPanel Grid.Row="1" Orientation="Horizontal">
-                            <Button x:Name="PCSplitButton">
-                                <SymbolIcon Symbol="GlobalNavigationButton"/>
-                            </Button>
-                            <times:TimeButton Padding="2,0" Time="{x:Bind Duration, Mode=TwoWay}" Style="{StaticResource TextBlockButtonStyle}">
-                                <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                                    <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/><Run>/</Run><Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
-                                </TextBlock>
-                            </times:TimeButton>
-                        </StackPanel>
-                    </Grid>
-                </ListView.Header>
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <Button x:Name="PCSplitButton" Foreground="White">
+                                    <SymbolIcon Symbol="GlobalNavigationButton"/>
+                                </Button>
+                                <Button x:Name="TimeButton2" Padding="2,0" Width="Auto" Foreground="White" >
+                                    <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
+                                        <Run FontSize="24" Foreground="White" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/><Run>/</Run><Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                                    </TextBlock>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </ListView.Header>
 
-                <ListView.Footer>
-                    <ListView x:Name="SpeedListView" Margin="8" MinHeight="80"
+                    <ListView.Footer>
+                        <ListView x:Name="SpeedListView" Margin="8" MinHeight="80"
                               SelectionMode="None" IsItemClickEnabled="False"
-                              HeaderTemplate="{StaticResource HeaderDataTemplate}"
                               Visibility="{x:Bind BooleanToVisibilityConverter(SplitView.IsPaneOpen), Mode=OneWay}"
                               Background="{ThemeResource SystemAltLowColor}">
+                            <ListView.HeaderTemplate>
+                                <DataTemplate x:DataType="x:Object">
+                                    <ContentPresenter Content="{x:Bind}" Margin="10,0" FontSize="14" FontWeight="Medium" />
+                                </DataTemplate>
+                            </ListView.HeaderTemplate>
 
-                        <ListView.ItemContainerStyle>
-                            <Style TargetType="ListViewItem">
-                                <Setter Property="MinHeight" Value="36"/>
-                            </Style>
-                        </ListView.ItemContainerStyle>
+                            <ItemsControl.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="MinHeight" Value="36"/>
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
 
-                        <RadioButton>
-                            <x:Double>0.5</x:Double>
-                        </RadioButton>
-                        <RadioButton>
-                            <x:Double>0.75</x:Double>
-                        </RadioButton>
-                        <RadioButton Margin="2,0" IsChecked="True">
-                            <x:Double>1.0</x:Double>
-                        </RadioButton>
-                        <RadioButton>
-                            <x:Double>1.5</x:Double>
-                        </RadioButton>
-                        <RadioButton>
-                            <x:Double>2.0</x:Double>
-                        </RadioButton>
+                            <RadioButton>
+                                <x:Double>0.5</x:Double>
+                            </RadioButton>
+                            <RadioButton>
+                                <x:Double>0.75</x:Double>
+                            </RadioButton>
+                            <RadioButton Margin="2,0" IsChecked="True">
+                                <x:Double>1.0</x:Double>
+                            </RadioButton>
+                            <RadioButton>
+                                <x:Double>1.5</x:Double>
+                            </RadioButton>
+                            <RadioButton>
+                                <x:Double>2.0</x:Double>
+                            </RadioButton>
 
-                    </ListView>
-                </ListView.Footer>
+                        </ListView>
+                    </ListView.Footer>
 
-                <ListViewItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="Add"/>
-                        </Border>
-                        <TextBlock x:Name="NewTextBlock" Margin="12,2" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="26" Height="26">
+                                <SymbolIcon Symbol="Add"/>
+                            </Border>
+                            <TextBlock x:Name="NewTextBlock" Margin="12,2" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
 
-                <ListViewItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="OpenFile"/>
-                        </Border>
-                        <TextBlock x:Name="OpenTextBlock" Margin="12,0" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="26" Height="26">
+                                <SymbolIcon Symbol="OpenFile"/>
+                            </Border>
+                            <TextBlock x:Name="OpenTextBlock" Margin="12,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
 
-                <ListViewItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="Save"/>
-                        </Border>
-                        <TextBlock x:Name="SaveTextBlock" Margin="12,0" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="26" Height="26">
+                                <SymbolIcon Symbol="Save"/>
+                            </Border>
+                            <TextBlock x:Name="SaveTextBlock" Margin="12,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
 
-                <ListViewItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="Help"/>
-                        </Border>
-                        <TextBlock x:Name="TutorialTextBlock" Margin="12,0" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="26" Height="26">
+                                <SymbolIcon Symbol="Help"/>
+                            </Border>
+                            <TextBlock x:Name="TutorialTextBlock" Margin="12,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
 
-                <ListViewItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="Important"/>
-                        </Border>
-                        <TextBlock x:Name="AboutTextBlock" Margin="12,0" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="26" Height="26">
+                                <SymbolIcon Symbol="Important"/>
+                            </Border>
+                            <TextBlock x:Name="AboutTextBlock" Margin="12,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
 
-                <ListViewItem Visibility="Collapsed">
-                    <StackPanel Orientation="Horizontal">
-                        <Border Width="26" Height="26">
-                            <SymbolIcon Symbol="Setting"/>
-                        </Border>
-                        <TextBlock x:Name="SettingTextBlock" Margin="12,0" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <ListViewItem Height="60" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="26" Height="26">
+                                <SymbolIcon Symbol="Setting"/>
+                            </Border>
+                            <TextBlock x:Name="SettingTextBlock" Margin="12,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
 
-            </ListView>
-        </SplitView.Pane>
+                </ListView>
+            </SplitView.Pane>
 
-
-        <SplitView.Content>
-            <Grid x:Name="ContentGrid" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+            <Grid x:Name="ContentGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition x:Name="Column01" Width="400" />
@@ -366,16 +378,13 @@
                     <RowDefinition x:Name="Row03" Height="70" MinHeight="70"/>
                 </Grid.RowDefinitions>
 
-                <!--Extensions-->
-                <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="Transparent"/>
-
 
                 <TextBlock x:Name="PadAppTitleTextBlock"  Margin="12,0" FontSize="12" VerticalAlignment="Center"
                            Visibility="{x:Bind ReverseBooleanToVisibilityConverter(SplitView.IsPaneOpen), Mode=OneWay}"/>
 
 
                 <!--Preview-->
-                <ScrollViewer x:Name="SpanScrollViewer" Grid.Row="1" Grid.RowSpan="2" Padding="18,6" Margin="4" ZoomMode="Enabled" Background="{ThemeResource AppBackground}">
+                <ScrollViewer x:Name="SpanScrollViewer" Grid.Row="1" Grid.RowSpan="2" Padding="18,6" Margin="4" ZoomMode="Enabled" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <TextBlock x:Name="PreviewTextBlock" FontSize="20" IsTextSelectionEnabled="True"> 
                        
                         <Run>[</Run><Run Foreground="{ThemeResource AppTagBrush}">ti</Run><Run>:</Run><Run Foreground="{ThemeResource AppTitleBrush}" Text="{x:Bind TitleTextBox.Text, Mode=OneWay}"/><Run>]</Run> 
@@ -405,14 +414,15 @@
 
                 <ListView x:Name="ZoomListView" Grid.Row="1" Grid.RowSpan="2" Width="46" Margin="8,58,8,8"
                           SelectionMode="None" IsItemClickEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                          BorderThickness="1" 
-                          BorderBrush="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" 
+                          BorderThickness="1"                           
+                          BorderBrush="{ThemeResource AppBorderBrush}" 
                           apiContractNotPresent5:Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"
                           apiContractPresent5:Background="{ThemeResource SystemControlAcrylicElementBrush}"
                            >
 
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
+                            <Setter Property="Foreground" Value="{ThemeResource SystemColorControlAccentBrush}"/>
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
                             <Setter Property="VerticalContentAlignment" Value="Center"/>
                             <Setter Property="MinWidth" Value="22"/>
@@ -421,21 +431,27 @@
 
                     <ListViewItem>
                         <ToolTipService.ToolTip>
-                            <ToolTip x:Name="ZoomToolTip"/>
+                            <ToolTip x:Name="ZoomToolTip" Style="{StaticResource AppToolTipStyle}">
+                                Zoom
+                            </ToolTip>
                         </ToolTipService.ToolTip>
                         <SymbolIcon Symbol="Zoom"/>
                     </ListViewItem>
 
                     <ListViewItem>
                         <ToolTipService.ToolTip>
-                            <ToolTip x:Name="ZoomInToolTip"/>
+                            <ToolTip x:Name="ZoomInToolTip" Style="{StaticResource AppToolTipStyle}">
+                                Zoom In
+                            </ToolTip>
                         </ToolTipService.ToolTip>
                         <SymbolIcon Symbol="ZoomIn"/>
                     </ListViewItem>
 
                     <ListViewItem>
                         <ToolTipService.ToolTip>
-                            <ToolTip x:Name="ZoomOutToolTip"/>
+                            <ToolTip x:Name="ZoomOutToolTip" Style="{StaticResource AppToolTipStyle}">
+                                Zoom Out
+                            </ToolTip>
                         </ToolTipService.ToolTip>
                         <SymbolIcon Symbol="ZoomOut"/>
                     </ListViewItem>
@@ -456,81 +472,97 @@
                     </Border.Background>
                 </Border>
 
-                <Pivot x:Name="EditerPivot" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <Border x:Name="EditerBorder" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"   
+                       BorderThickness="1"                           
+                       BorderBrush="{ThemeResource AppBorderBrush}" 
+                       Background="{ThemeResource AppBackground}">
+                    <Pivot x:Name="EditerPivot" Background="{x:Null}">
 
-                    <Pivot.RightHeader>
-                        <elements:GridSpliterButton x:Name="GridSpliterButton" Visibility="Collapsed" Width="50" Height="40" Style="{StaticResource TextBlockButtonStyle}">
-                            <ToolTipService.ToolTip>
-                                <ToolTip x:Name="SpliteToolTip"/>
-                            </ToolTipService.ToolTip>
-                            <SymbolIcon Symbol="GlobalNavigationButton"/>
-                        </elements:GridSpliterButton>
-                    </Pivot.RightHeader>
-
-
-                    <PivotItem Margin="0" Padding="0">
-                        <PivotItem.Header>
-                            <TextBlock x:Name="InfoTextBlock" FontSize="14" FontWeight="Bold"/>
-                        </PivotItem.Header>
-                        <ListView SelectionMode="None" IsItemClickEnabled="True">
-
-                            <ListView.ItemContainerStyle>
-                                <Style TargetType="ListViewItem">
-                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                                    <Setter Property="Height" Value="Auto"/>
-                                    <Setter Property="Padding" Value="4,0"/>
-                                </Style>
-                            </ListView.ItemContainerStyle>
-
-                            <ListViewItem>
-                                <TextBox x:Name="TitleTextBox" Grid.Row="1" Margin="0,2,0,6" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
-                            </ListViewItem>
-
-                            <ListViewItem>
-                                <TextBox x:Name="ArtistTextBox" Grid.Row="1" Margin="0,2,0,6" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
-                            </ListViewItem>
-
-                            <ListViewItem>
-                                <TextBox x:Name="AlbumTextBox" Grid.Row="1" Margin="0,2,0,6" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
-                            </ListViewItem>
-
-                            <ListViewItem>
-                                <TextBox x:Name="LyricsEditorTextBox" Grid.Row="1" Margin="0,2,0,6" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
-                            </ListViewItem>
-
-                            <ListViewItem>
-                                <Slider x:Name="TimeOffsetSlider" Grid.Row="1" Value="0" Maximum="500" Minimum="-500" FontSize="18" FontWeight="Medium" HeaderTemplate="{StaticResource HeaderDataTemplate}"/>
-                            </ListViewItem>
-
-                        </ListView>
-                    </PivotItem>
+                        <Pivot.RightHeader>
+                            <elements:GridSpliterButton x:Name="GridSpliterButton" 
+                                                    Visibility="Collapsed" Width="50" Height="40" 
+                                                    Style="{StaticResource TextBlockButtonStyle}">
+                                <ToolTipService.ToolTip>
+                                    <ToolTip x:Name="SpliteToolTip"/>
+                                </ToolTipService.ToolTip>
+                                <SymbolIcon Symbol="GlobalNavigationButton"/>
+                            </elements:GridSpliterButton>
+                        </Pivot.RightHeader>
 
 
-                    <PivotItem Margin="0" Padding="0">
-                        <PivotItem.Header>
-                            <TextBlock x:Name="LyricsTextBlock" FontSize="14" FontWeight="Bold">
+                        <PivotItem Margin="0" Padding="0">
+                            <PivotItem.Header>
+                                <TextBlock x:Name="InfoTextBlock" FontSize="14" FontWeight="Bold"/>
+                            </PivotItem.Header>
+
+                            <ScrollViewer>
+                                <StackPanel Margin="12,2" Padding="4,2" VerticalAlignment="Top"
+                                  BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}">
+
+                                    <TextBox x:Name="TitleTextBox" Grid.Row="1" Margin="0,2,0,6" 
+                                     BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}">
+                                        <TextBox.Header>
+                                            Title
+                                        </TextBox.Header>
+                                    </TextBox>
+
+                                    <TextBox x:Name="ArtistTextBox" Grid.Row="1" Margin="0,2,0,6" 
+                                     BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}">
+                                        <TextBox.Header>
+                                            Artist
+                                        </TextBox.Header>
+                                    </TextBox>
+
+                                    <TextBox x:Name="AlbumTextBox" Grid.Row="1" Margin="0,2,0,6" 
+                                     BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}">
+                                        <TextBox.Header>
+                                            Album
+                                        </TextBox.Header>
+                                    </TextBox>
+
+                                    <TextBox x:Name="LyricsEditorTextBox" Grid.Row="1" Margin="0,2,0,6" 
+                                     BorderThickness="1" BorderBrush="{ThemeResource AppBorderBrush}">
+                                        <TextBox.Header>
+                                            Lyrics Editor
+                                        </TextBox.Header>
+                                    </TextBox>
+
+                                    <Slider x:Name="TimeOffsetSlider" Grid.Row="1" Value="0" Maximum="500" Minimum="-500" >
+                                        <Slider.Header>
+                                            Time Offset
+                                        </Slider.Header>
+                                    </Slider>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </PivotItem>
+
+
+                        <PivotItem Margin="0" Padding="0">
+                            <PivotItem.Header>
+                                <TextBlock x:Name="LyricsTextBlock" FontSize="14" FontWeight="Bold">
                                 Lyrics
-                            </TextBlock>
-                        </PivotItem.Header>
-                        <ScrollViewer x:Name="ControlScrollViewer">
-                            <controls:ControlCanvas x:Name="ControlCanvas" ItemSource="{x:Bind ObservableCollection}" Duration="{x:Bind Duration, Mode=OneWay}">
-                                <Line x:Name="Line" IsHitTestVisible="False" Canvas.ZIndex="1" 
+                                </TextBlock>
+                            </PivotItem.Header>
+                            <ScrollViewer x:Name="ControlScrollViewer">
+                                <controls:ControlCanvas x:Name="ControlCanvas" ItemSource="{x:Bind ObservableCollection}" Duration="{x:Bind Duration, Mode=OneWay}">
+                                    <Line x:Name="Line" IsHitTestVisible="False" Canvas.ZIndex="1" 
                                       X1="22" Y1="0" X2="512" Y2="0" 
                                       StrokeThickness="2" Stroke="Orange"
                                       Visibility="{x:Bind ReverseBooleanToVisibilityConverter(IsPlaying), Mode=OneWay}"/>
-                                <Border IsHitTestVisible="False" Canvas.ZIndex="1" 
+                                    <Border IsHitTestVisible="False" Canvas.ZIndex="1" 
                                         Canvas.Top="{x:Bind LineYToCanvasTopConverter(Line.Y1), Mode=OneWay}"
                                         CornerRadius="0,4,4,0" Width="22" Height="12"
                                         BorderThickness="2" BorderBrush="Orange" HorizontalAlignment="Left" VerticalAlignment="Top"
                                         Visibility="{x:Bind ReverseBooleanToVisibilityConverter(IsPlaying), Mode=OneWay}">
-                                </Border>
-                            </controls:ControlCanvas>
-                        </ScrollViewer>
-                    </PivotItem>
+                                    </Border>
+                                </controls:ControlCanvas>
+                            </ScrollViewer>
+                        </PivotItem>
 
 
-                </Pivot>
+                    </Pivot>
+                </Border>
 
                 <Grid x:Name="LineGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="0,49,0,0"
                       Visibility="{x:Bind IndexToVisibilityConverter(EditerPivot.SelectedIndex), Mode=OneWay}">
@@ -551,21 +583,36 @@
                     <Button x:Name="PhoneSplitButton" Visibility="Collapsed">
                         <SymbolIcon Symbol="GlobalNavigationButton"/>
                     </Button>
-                    <times:TimeButton Padding="2,0" Time="{x:Bind Duration, Mode=TwoWay}" Style="{StaticResource TextBlockButtonStyle}">
+                    <times:TimeButton x:Name="TimeButton" Padding="2,0" 
+                                                  Time="{x:Bind Duration, Mode=TwoWay}" 
+                                                  BorderThickness="1"                        
+                                                  BorderBrush="{ThemeResource AppBorderBrush}"                           
+                                                  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                                                  Style="{StaticResource TextBlockButtonStyle}">
                         <TextBlock Margin="4,0" FontWeight="Bold" VerticalAlignment="Center">
-                            <Run FontSize="24"  Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/><Run>/</Run><Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
+                            <Run FontSize="24" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Text="{x:Bind TimeSpanToStringConverter(Position), Mode=OneWay}"/><Run>/</Run><Run Text="{x:Bind TimeSpanToStringConverter(Duration), Mode=OneWay}"/>
                         </TextBlock>
                     </times:TimeButton>
                 </StackPanel>
 
 
                 <!--CommandBar-->
-                <CommandBar Grid.ColumnSpan="2" Grid.Row="1" Background="{x:Null}">
+                <Border Grid.ColumnSpan="2" Grid.Row="1" Height="50" Padding="10,2" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Border Width="60" Height="38" CornerRadius="4" Background="{ThemeResource SystemColorControlAccentBrush}">
+                        <Button x:Name="AddButton" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockButtonStyle}">
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="AddToolTip" Style="{StaticResource AppToolTipStyle}">
+                                    Add
+                                </ToolTip>
+                            </ToolTipService.ToolTip>
+                            <SymbolIcon Symbol="Add"/>
+                        </Button>
+                    </Border>
+                </Border>
+                <CommandBar Grid.ColumnSpan="2" Grid.Row="1" Visibility="Collapsed">
                     <CommandBar.PrimaryCommands>
 
-                        <AppBarButton x:Name="FindButton" Visibility="Collapsed" Icon="Find"/>
-
-                        <AppBarButton x:Name="AddButton" Icon="Add" Foreground="White" Background="{ThemeResource SystemColorControlAccentBrush}"/>
+                        <AppBarButton x:Name="FindButton" Icon="Find"/>
 
                         <AppBarButton x:Name="MoveButton" Visibility="Collapsed" Icon="MoveToFolder" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
@@ -573,37 +620,37 @@
                             </AppBarButton.Command>
                         </AppBarButton>
 
-                        <AppBarButton x:Name="PlayButton" Visibility="Collapsed" Icon="Play" CommandParameter="{x:Null}">
+                        <AppBarButton x:Name="PlayButton" Icon="Play" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
                                 <elements:RelayCommand x:Name="PlayCommand"/>
                             </AppBarButton.Command>
                         </AppBarButton>
 
-                        <AppBarButton x:Name="PauseButton" Visibility="Collapsed" Icon="Pause" CommandParameter="{x:Null}">
+                        <AppBarButton x:Name="PauseButton" Icon="Pause" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
                                 <elements:RelayCommand x:Name="PauseCommand"/>
                             </AppBarButton.Command>
                         </AppBarButton>
 
-                        <AppBarButton x:Name="PasteButton" Visibility="Collapsed" Icon="Copy" CommandParameter="{x:Null}">
+                        <AppBarButton x:Name="PasteButton" Icon="Copy" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
                                 <elements:RelayCommand x:Name="PasteCommand"/>
                             </AppBarButton.Command>
                         </AppBarButton>
 
-                        <AppBarButton x:Name="CopyButton" Visibility="Collapsed" Icon="Copy" CommandParameter="{x:Null}">
+                        <AppBarButton x:Name="CopyButton" Icon="Copy" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
                                 <elements:RelayCommand x:Name="CopyCommand"/>
                             </AppBarButton.Command>
                         </AppBarButton>
 
-                        <AppBarButton x:Name="DuplicateButton" Visibility="Collapsed" Icon="Copy" CommandParameter="{x:Null}">
+                        <AppBarButton x:Name="DuplicateButton" Icon="Copy" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
                                 <elements:RelayCommand x:Name="DuplicateCommand"/>
                             </AppBarButton.Command>
                         </AppBarButton>
 
-                        <AppBarButton x:Name="RemoveButton" Visibility="Collapsed" Icon="Delete" CommandParameter="{x:Null}">
+                        <AppBarButton x:Name="RemoveButton" Icon="Delete" CommandParameter="{x:Null}">
                             <AppBarButton.Command>
                                 <elements:RelayCommand x:Name="RemoveCommand"/>
                             </AppBarButton.Command>
@@ -616,80 +663,93 @@
                 <!--Footer-->
                 <Border Grid.ColumnSpan="2" Grid.Row="3" 
                         apiContractNotPresent5:Background="{ThemeResource SystemControlBackgroundAccentBrush}"
-                        apiContractPresent5:Background="{ThemeResource SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush}"
+                        apiContractPresent5:Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"
                         >
-                    <Border Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}">
-                        <Grid RequestedTheme="Dark">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition x:Name="FooterColumn00" Width="70"/>
-                                <ColumnDefinition Width="4"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition x:Name="FooterColumn05" Width="12"/>
-                            </Grid.ColumnDefinitions>
+                    <Grid RequestedTheme="Dark">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="FooterColumn00" Width="70"/>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition x:Name="FooterColumn05" Width="12"/>
+                        </Grid.ColumnDefinitions>
 
-                            <Border Background="{ThemeResource SystemControlBackgroundListLowBrush}">
-                                <SymbolIcon Symbol="MusicInfo" Foreground="Black"/>
-                            </Border>
-                            <Image Stretch="UniformToFill">
-                                <Image.Source>
-                                    <BitmapImage x:Name="BitmapImage" />
-                                </Image.Source>
-                            </Image>
+                        <Border Background="{ThemeResource SystemControlBackgroundListLowBrush}">
+                            <SymbolIcon Symbol="MusicInfo" Foreground="Black"/>
+                        </Border>
+                        <Image Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage x:Name="BitmapImage" />
+                            </Image.Source>
+                        </Image>
 
-                            <Button x:Name="PlayMusicButton" Grid.Column="2" Visibility="{x:Bind ReverseBooleanToVisibilityConverter(IsPlaying), Mode=OneWay}">
-                                <ToolTipService.ToolTip>
-                                    <ToolTip x:Name="PlayMusicToolTip"/>
-                                </ToolTipService.ToolTip>
-                                <SymbolIcon Symbol="Play"/>
-                            </Button>
+                        <Button x:Name="PlayMusicButton" Grid.Column="2" Foreground="White" Visibility="{x:Bind ReverseBooleanToVisibilityConverter(IsPlaying), Mode=OneWay}">
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="PlayMusicToolTip" Style="{StaticResource AppToolTipStyle}">
+                                    Play Music
+                                </ToolTip>
+                            </ToolTipService.ToolTip>
+                            <SymbolIcon Symbol="Play"/>
+                        </Button>
 
-                            <Button x:Name="PauseMusicButton" Grid.Column="2" Visibility="{x:Bind BooleanToVisibilityConverter(IsPlaying), Mode=OneWay}">
-                                <ToolTipService.ToolTip>
-                                    <ToolTip x:Name="PauseMusicToolTip"/>
-                                </ToolTipService.ToolTip>
-                                <SymbolIcon Symbol="Pause"/>
-                            </Button>
+                        <Button x:Name="PauseMusicButton" Grid.Column="2" Foreground="White" Visibility="{x:Bind BooleanToVisibilityConverter(IsPlaying), Mode=OneWay}">
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="PauseMusicToolTip" Style="{StaticResource AppToolTipStyle}">
+                                    Pause Music
+                                </ToolTip>
+                            </ToolTipService.ToolTip>
+                            <SymbolIcon Symbol="Pause"/>
+                        </Button>
 
-                            <Border IsHitTestVisible="False" Grid.Column="3" Margin="18,0,22,0">
-                                <Border.RenderTransform>
-                                    <ScaleTransform x:Name="LineBorderScaleTransform" CenterY="0" ScaleY="1"/>
-                                </Border.RenderTransform>
-                                <controls:LineCanvas x:Name="LineCanvas" ItemSource="{x:Bind ObservableCollection}">
-                                    <controls:LineCanvas.RenderTransform>
-                                        <ScaleTransform x:Name="LineScaleTransform" CenterY="0" ScaleY="1"/>
-                                    </controls:LineCanvas.RenderTransform>
-                                </controls:LineCanvas>
-                            </Border>
-                            <elements:PositionSlider x:Name="PositionSlider" Grid.Column="3" Margin="8,0" IsThumbToolTipEnabled="False" 
+                        <Border IsHitTestVisible="False" Grid.Column="3" Margin="18,0,22,0">
+                            <Border.RenderTransform>
+                                <ScaleTransform x:Name="LineBorderScaleTransform" CenterY="0" ScaleY="1"/>
+                            </Border.RenderTransform>
+                            <controls:LineCanvas x:Name="LineCanvas" ItemSource="{x:Bind ObservableCollection}">
+                                <controls:LineCanvas.RenderTransform>
+                                    <ScaleTransform x:Name="LineScaleTransform" CenterY="0" ScaleY="1"/>
+                                </controls:LineCanvas.RenderTransform>
+                            </controls:LineCanvas>
+                        </Border>
+                        <elements:PositionSlider x:Name="PositionSlider" Grid.Column="3" Margin="8,0" IsThumbToolTipEnabled="False" 
                                                  Value="{x:Bind TimeSpanToDoubleConverter(Position), Mode=OneWay}"
                                                  Minimum="0"
                                                  Maximum="{x:Bind TimeSpanToDoubleConverter(Duration), Mode=OneWay}"
                                                  Style="{StaticResource MediaSliderStyle}">
-                                <elements:PositionSlider.Header>
-                                    <TextBlock x:Name="MusicNameTextBlock" FontSize="18" TextTrimming="WordEllipsis">
+                            <elements:PositionSlider.Header>
+                                <TextBlock x:Name="MusicNameTextBlock" FontSize="18" TextTrimming="WordEllipsis">
                                         <Run Text="{x:Bind TitleTextBox.Text, Mode=OneWay}" FontWeight="Bold"/>
                                         <Run></Run>
                                         <Run x:Name="SubtitleRun" Foreground="{ThemeResource SystemAccentColorLight3}"/>
-                                    </TextBlock>
-                                </elements:PositionSlider.Header>
-                            </elements:PositionSlider>
+                                </TextBlock>
+                            </elements:PositionSlider.Header>
+                        </elements:PositionSlider>
 
-                            <Button x:Name="OpenMusicButton" Grid.Column="4">
-                                <ToolTipService.ToolTip>
-                                    <ToolTip x:Name="OpenMusicToolTip"/>
-                                </ToolTipService.ToolTip>
-                                <SymbolIcon Symbol="OpenFile"/>
-                            </Button>
+                        <Button x:Name="OpenMusicButton" Grid.Column="4" Foreground="White" >
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="OpenMusicToolTip"/>
+                            </ToolTipService.ToolTip>
+                            <SymbolIcon Symbol="OpenFile"/>
+                        </Button>
 
-                        </Grid>
-                    </Border>
+                    </Grid>
                 </Border>
 
 
             </Grid>
-        </SplitView.Content>
 
-    </SplitView>
+        </SplitView>
+
+
+        <!--Dialog-->
+        <Grid>
+            <FrameworkElement.Resources>
+                <!--Style-->
+                <Style TargetType="ScrollViewer" BasedOn="{StaticResource AppVerticalScrollViewerStyle}"/>
+            </FrameworkElement.Resources>
+            <local:AboutDialog x:Name="AboutDialog" Style="{StaticResource AppContentDialogStyle}"/>
+        </Grid>
+
+    </Grid>
 </Page>

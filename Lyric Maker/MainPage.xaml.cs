@@ -79,7 +79,7 @@ namespace Lyric_Maker
                 foreach (Lyric item in control.ObservableCollection)
                 {
                     item.Duration = value;
-                }            
+                }
             }
         }));
 
@@ -145,11 +145,13 @@ namespace Lyric_Maker
             this.InitializeComponent();
             this.ConstructFlowDirection();
             this.ConstructStrings();
+            this.TimeButton2.Click += (s, e) => this.TimeButton.Flyout.ShowAt(this.TimeButton);
 
-
-            // Extend TitleBar
-            CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
+            {
+                // Extend TitleBar
+                CoreApplicationView applicationView = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView();
+                applicationView.TitleBar.ExtendViewIntoTitleBar = false;
+            }
 
 
             // Tick
@@ -242,7 +244,7 @@ namespace Lyric_Maker
                         case Symbol.OpenFile: await this.Open(); break;
                         case Symbol.Save: await this.Save(); break;
                         case Symbol.Help: base.Frame.Navigate(typeof(TutorialPage)); break;
-                        case Symbol.Important: await new AboutDialog().ShowAsync(); break;
+                        case Symbol.Important: await this.AboutDialog.ShowAsync(ContentDialogPlacement.InPlace); break;
                         case Symbol.Setting: break;
                     }
                     base.IsEnabled = true;

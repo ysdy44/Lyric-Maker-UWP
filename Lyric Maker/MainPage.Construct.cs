@@ -59,7 +59,7 @@ namespace Lyric_Maker
             this.TimeOffsetSlider.Header = resource.GetString("TimeOffset");
 
             this.FindButton.Label = resource.GetString("Find");
-            this.AddButton.Label = resource.GetString("Add");
+            this.AddToolTip.Content = resource.GetString("Add");
             this.MoveButton.Label = resource.GetString("Move");
             this.PlayButton.Label = resource.GetString("Play");
             this.PauseButton.Label = resource.GetString("Pause");
