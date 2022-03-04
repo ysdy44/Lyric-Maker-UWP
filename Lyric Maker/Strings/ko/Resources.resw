@@ -61,7 +61,7 @@
 <data name='$DisplayName' xml:space='preserve'><value>가사 메이커</value></data>
 <data name='$Untitled' xml:space='preserve'><value>무제</value></data>
 <data name='$InputText' xml:space='preserve'><value>텍스트를 입력하십시오</value></data>
-<data name='$Version' xml:space='preserve'><value>1.2.0</value></data>
+<data name='$Version' xml:space='preserve'><value>1.2.1</value></data>
 <data name='$GithubLink' xml:space='preserve'><value>https://github.com/ysdy44/Lyric-Maker-UWP</value></data>
 <data name='$FeedbackLink' xml:space='preserve'><value>ysdy44@outlook.com</value></data>
 <data name='Cancel' xml:space='preserve'><value>취소</value></data>

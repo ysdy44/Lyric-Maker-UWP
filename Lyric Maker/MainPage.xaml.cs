@@ -149,8 +149,8 @@ namespace Lyric_Maker
 
             {
                 // Extend TitleBar
-                CoreApplicationView applicationView = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView();
-                applicationView.TitleBar.ExtendViewIntoTitleBar = false;
+                CoreApplicationView applicationView = CoreApplication.GetCurrentView();
+                applicationView.TitleBar.ExtendViewIntoTitleBar = true;
             }
 
 

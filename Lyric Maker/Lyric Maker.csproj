@@ -247,10 +247,14 @@
     <PRIResource Include="Strings\ja\Resources.resw" />
     <PRIResource Include="Strings\it\Resources.resw" />
     <PRIResource Include="Strings\fr\Resources.resw" />
-    <PRIResource Include="Strings\es\Resources.resw" />
+    <PRIResource Include="Strings\es\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
     <PRIResource Include="Strings\en-US\Resources.resw" />
     <PRIResource Include="Strings\de\Resources.resw" />
-    <PRIResource Include="Strings\ar\Resources.resw" />
+    <PRIResource Include="Strings\ar\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
   </ItemGroup>
   <ItemGroup>
     <Page Include="AboutDialog.xaml">
