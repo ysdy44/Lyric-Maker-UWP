@@ -13,18 +13,44 @@ namespace Lyric_Maker.Elements
 
         #region DependencyProperty
 
-        public GridLength SpliterHeight
+
+        /// <summary> Gets or set the value for <see cref="GridSpliterButton"/>. </summary>
+        public GridLength Value
         {
-            get => (GridLength)base.GetValue(SpliterHeightProperty);
-            set => base.SetValue(SpliterHeightProperty, value);
+            get => (GridLength)base.GetValue(ValueProperty);
+            set => base.SetValue(ValueProperty, value);
         }
-        /// <summary> Identifies the <see cref="GridSpliterButton.SpliterHeight"/> dependency property. </summary>
-        public static readonly DependencyProperty SpliterHeightProperty = DependencyProperty.Register(nameof(SpliterHeight), typeof(GridLength), typeof(GridSpliterButton), new PropertyMetadata(new GridLength(276.0)));
+        /// <summary> Identifies the <see cref="GridSpliterButton.Value"/> dependency property. </summary>
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(nameof(Value), typeof(GridLength), typeof(GridSpliterButton), new PropertyMetadata(new GridLength(276.0)));
+
+
+        /// <summary> Gets or set the orientation for <see cref="GridSpliterButton"/>. </summary>
+        public Orientation Orientation
+        {
+            get => this.orientation;
+            set
+            {
+                switch (value)
+                {
+                    case Orientation.Vertical:
+                        base.ManipulationMode = ManipulationModes.TranslateY;
+                        break;
+                    case Orientation.Horizontal:
+                        base.ManipulationMode = ManipulationModes.TranslateX;
+                        break;
+                    default:
+                        base.ManipulationMode = ManipulationModes.TranslateY;
+                        break;
+                }
+                this.orientation = value;
+            }
+        }
+        private Orientation orientation;
+
 
         #endregion
 
-        double startingSpliterHeight = 276;
-
+        double startingValue = 276;
 
         //@Construct
         /// <summary>
@@ -32,12 +58,20 @@ namespace Lyric_Maker.Elements
         /// </summary>
         public GridSpliterButton()
         {
-            base.ManipulationMode = ManipulationModes.TranslateY;
-            base.ManipulationStarted += (s, e) => this.startingSpliterHeight = this.SpliterHeight.Value;
+            base.Loaded += (s, e) => this.Orientation = this.Orientation;
+            base.ManipulationStarted += (s, e) => this.startingValue = this.Value.Value;
             base.ManipulationDelta += (s, e) =>
             {
-                this.startingSpliterHeight += e.Delta.Translation.Y;
-                this.SpliterHeight = new GridLength(this.startingSpliterHeight < 0 ? 0 : this.startingSpliterHeight);
+                switch (this.Orientation)
+                {
+                    case Orientation.Vertical:
+                        this.startingValue += e.Delta.Translation.Y;
+                        break;
+                    case Orientation.Horizontal:
+                        this.startingValue += e.Delta.Translation.X;
+                        break;
+                }
+                this.Value = new GridLength(this.startingValue < 0 ? 0 : this.startingValue);
             };
             base.ManipulationCompleted += (s, e) => { };
         }
