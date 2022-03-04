@@ -26,7 +26,10 @@ namespace Lyric_Maker.Lyrics
         {
             Width = 1,
             Height = 46,
-            Fill = App.Current.Resources["SystemColorControlAccentBrush"] as Brush
+            Fill = new SolidColorBrush(Colors.White)
+            {
+                Opacity = 0.4
+            }
         };
         public ContentControl Control { get; }
 
