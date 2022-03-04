@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Input;
 using Windows.ApplicationModel.Resources;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -12,9 +13,6 @@ namespace Lyric_Maker.Times
     /// </summary>
     public sealed partial class TimeButton : Button
     {
-
-        //@Converter
-        public string TimeSpanToStringConverter(TimeSpan value) => value.ToString("mm':'ss'.'ff");
 
 
         #region DependencyProperty
@@ -78,9 +76,9 @@ namespace Lyric_Maker.Times
             };
             this.Flyout.Opened += (s, e) =>
             {
-                this.MinuteNumberPicker.Index = this.Time.Minutes;
-                this.SecondNumberPicker.Index = this.Time.Seconds;
-                this.MillisecondNumberPicker.Index = this.Time.Milliseconds / 10;
+                this.MinuteRoulette.Index = this.Time.Minutes;
+                this.SecondRoulette.Index = this.Time.Seconds;
+                this.MillisecondRoulette.Index = this.Time.Milliseconds / 10;
             };
 
             this.CancelButton.Click += (s, e) => this.Flyout.Hide();
@@ -90,16 +88,62 @@ namespace Lyric_Maker.Times
                 (
                     days: 0,
                     hours: 0,
-                    minutes: this.MinuteNumberPicker.Index,
-                    seconds: this.SecondNumberPicker.Index,
-                    milliseconds: this.MillisecondNumberPicker.Index * 10
+                    minutes: this.MinuteRoulette.Index,
+                    seconds: this.SecondRoulette.Index,
+                    milliseconds: this.MillisecondRoulette.Index * 10
                 );
                 this.Time = time > this.Maximum ? this.Maximum : time;
 
                 this.MoveCommand?.Execute(this.MoveCommandParameter);
                 this.Flyout.Hide();
             };
+
+            this.MinuteRoulette.ItemClick += (s, e) => this.ItemClick(this.MinuteTextBox);
+            this.MinuteTextBox.GettingFocus += (s, e) => this.GettingFocus2(this.MinuteTextBox, this.MinuteRoulette);
+            this.MinuteTextBox.LostFocus += (s, e) => this.LostFocus2(this.MinuteTextBox, this.MinuteRoulette);
+            this.MinuteTextBox.KeyDown += (s, e) =>
+            {
+                switch (e.Key)
+                {
+                    case VirtualKey.Enter:
+                        this.ItemClick(this.SecondTextBox);
+                        break;
+                    default:
+                        break;
+                }
+            };
+
+            this.SecondRoulette.ItemClick += (s, e) => this.ItemClick(this.SecondTextBox);
+            this.SecondTextBox.GettingFocus += (s, e) => this.GettingFocus2(this.SecondTextBox, this.SecondRoulette);
+            this.SecondTextBox.LostFocus += (s, e) => this.LostFocus2(this.SecondTextBox, this.SecondRoulette);
+            this.SecondTextBox.KeyDown += (s, e) =>
+            {
+                switch (e.Key)
+                {
+                    case VirtualKey.Enter:
+                        this.ItemClick(this.MillisecondTextBox);
+                        break;
+                    default:
+                        break;
+                }
+            };
+
+            this.MillisecondRoulette.ItemClick += (s, e) => this.ItemClick(this.MillisecondTextBox);
+            this.MillisecondTextBox.GettingFocus += (s, e) => this.GettingFocus2(this.MillisecondTextBox, this.MillisecondRoulette);
+            this.MillisecondTextBox.LostFocus += (s, e) => this.LostFocus2(this.MillisecondTextBox, this.MillisecondRoulette);
+            this.MillisecondTextBox.KeyDown += (s, e) =>
+            {
+                switch (e.Key)
+                {
+                    case VirtualKey.Enter:
+                        this.OKButton.Focus(FocusState.Programmatic);
+                        break;
+                    default:
+                        break;
+                }
+            };
         }
+
 
         // FlowDirection
         private void ConstructFlowDirection()
@@ -117,6 +161,34 @@ namespace Lyric_Maker.Times
             this.MinutesTextBlock.Text = resource.GetString("Minutes");
             this.SecondsTextBlock.Text = resource.GetString("Seconds");
             this.MillisecondsTextBlock.Text = resource.GetString("Milliseconds");
+        }
+
+
+        private void ItemClick(TextBox textBox)
+        {
+            textBox.Visibility = Visibility.Visible;
+            textBox.Focus(FocusState.Programmatic);
+        }
+        private void GettingFocus2(TextBox textBox, Roulette roulette)
+        {
+            textBox.Text = roulette.Index.ToString("D2");
+
+            textBox.Visibility = Visibility.Visible;
+            this.BodyGrid.IsHitTestVisible = false;
+
+            textBox.SelectAll();
+        }
+        private void LostFocus2(TextBox textBox, Roulette roulette)
+        {
+            this.BodyGrid.IsHitTestVisible = true;
+            textBox.Visibility = Visibility.Collapsed;
+
+            string text = textBox.Text;
+            if (int.TryParse(text, out int result))
+            {
+                roulette.IndexChanged(result, true);
+                roulette.Index = result;
+            }
         }
 
     }
