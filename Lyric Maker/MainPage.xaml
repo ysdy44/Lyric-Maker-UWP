@@ -712,19 +712,19 @@
                                 </controls:LineCanvas.RenderTransform>
                             </controls:LineCanvas>
                         </Border>
-                        <elements:PositionSlider x:Name="PositionSlider" Grid.Column="3" Margin="8,0" IsThumbToolTipEnabled="False" 
+                        <elements:ThumbSlider x:Name="PositionSlider" Grid.Column="3" Margin="8,0" IsThumbToolTipEnabled="False" 
                                                  Value="{x:Bind TimeSpanToDoubleConverter(Position), Mode=OneWay}"
                                                  Minimum="0"
                                                  Maximum="{x:Bind TimeSpanToDoubleConverter(Duration), Mode=OneWay}"
                                                  Style="{StaticResource MediaSliderStyle}">
-                            <elements:PositionSlider.Header>
+                            <elements:ThumbSlider.Header>
                                 <TextBlock x:Name="MusicNameTextBlock" FontSize="18" TextTrimming="WordEllipsis">
                                         <Run Text="{x:Bind TitleTextBox.Text, Mode=OneWay}" FontWeight="Bold"/>
                                         <Run></Run>
                                         <Run x:Name="SubtitleRun" Foreground="{ThemeResource SystemAccentColorLight3}"/>
                                 </TextBlock>
-                            </elements:PositionSlider.Header>
-                        </elements:PositionSlider>
+                            </elements:ThumbSlider.Header>
+                        </elements:ThumbSlider>
 
                         <Button x:Name="OpenMusicButton" Grid.Column="4" Foreground="White" >
                             <ToolTipService.ToolTip>

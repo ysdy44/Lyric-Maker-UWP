@@ -137,7 +137,7 @@
     <Compile Include="Controls\RootSpan.cs" />
     <Compile Include="Elements\ApplicationTitleBarExtension.cs" />
     <Compile Include="Elements\GridSpliterButton.cs" />
-    <Compile Include="Elements\PositionSlider.cs" />
+    <Compile Include="Elements\ThumbSlider.cs" />
     <Compile Include="Elements\RelayCommand.cs" />
     <Compile Include="Elements\TimeMoveButton.cs" />
     <Compile Include="Lyrics\LyricData.cs" />
