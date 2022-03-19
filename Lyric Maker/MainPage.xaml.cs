@@ -237,7 +237,6 @@ namespace Lyric_Maker
                     border.Child is SymbolIcon symbolIcon)
                 {
                     this.IsPlaying = false;
-                    base.IsEnabled = false;
                     switch (symbolIcon.Symbol)
                     {
                         case Symbol.Add: this.New(); break;
@@ -247,7 +246,6 @@ namespace Lyric_Maker
                         case Symbol.Important: await this.AboutDialog.ShowAsync(ContentDialogPlacement.InPlace); break;
                         case Symbol.Setting: break;
                     }
-                    base.IsEnabled = true;
                 }
             };
 

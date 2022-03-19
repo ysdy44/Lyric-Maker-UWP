@@ -35,7 +35,7 @@ namespace Lyric_Maker.Elements
         public Color TitleBarColor
         {
             get => (Color)base.GetValue(TitleBarColorProperty);
-            set => SetValue(TitleBarColorProperty, value);
+            set => base.SetValue(TitleBarColorProperty, value);
         }
         /// <summary> Identifies the <see cref = "ApplicationTitleBarExtension.TitleBarColor" /> dependency property. </summary>
         public static readonly DependencyProperty TitleBarColorProperty = DependencyProperty.Register(nameof(TitleBarColor), typeof(Color), typeof(ApplicationTitleBarExtension), new PropertyMetadata(Colors.Gray, (sender, e) =>
@@ -53,7 +53,7 @@ namespace Lyric_Maker.Elements
         public Color AccentTitleBarColor
         {
             get => (Color)base.GetValue(AccentTitleBarColorProperty);
-            set => SetValue(AccentTitleBarColorProperty, value);
+            set => base.SetValue(AccentTitleBarColorProperty, value);
         }
         /// <summary> Identifies the <see cref = "ApplicationTitleBarExtension.AccentTitleBarColor" /> dependency property. </summary>
         public static readonly DependencyProperty AccentTitleBarColorProperty = DependencyProperty.Register(nameof(AccentTitleBarColor), typeof(Color), typeof(ApplicationTitleBarExtension), new PropertyMetadata(Colors.DodgerBlue, (sender, e) =>
