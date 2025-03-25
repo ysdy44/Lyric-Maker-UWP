@@ -4,7 +4,7 @@
 
  
  Windows 10 app store address: 
-[Buy Lyric Maker - Microsoft Store](https://www.microsoft.com/store/productId/9MXTN47HKZ08)   
+[Buy Lyric Maker - Microsoft Store](https://apps.microsoft.com/detail/9mxtn47hkz08)   
 
 
 <br/>

@@ -4,7 +4,7 @@
 
  
  Windows 10 应用商店地址: 
-[购置 作词 - 微软商店](https://www.microsoft.com/store/productId/9MXTN47HKZ08)   
+[购置 作词 - 微软商店](https://apps.microsoft.com/detail/9mxtn47hkz08)   
 
 
 <br/>
